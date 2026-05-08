@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://4c6p7308hx2l"]
+[gd_scene load_steps=6 format=3 uid="uid://4c6p7308hx2l"]
 
+[ext_resource type="PackedScene" uid="uid://c82v0dghefi5u" path="res://Scenes/layer.tscn" id="1_5erdv"]
 [ext_resource type="Script" uid="uid://cuolqwa3qlyi7" path="res://Scripts/click_handler.gd" id="1_q2fht"]
 [ext_resource type="Script" uid="uid://tg4ahbs4qlc8" path="res://Scripts/camera_movement.gd" id="2_ikcpc"]
 
@@ -9,9 +10,14 @@
 
 [node name="MainLevel" type="Node3D"]
 
+[node name="LayerManager" type="Node3D" parent="."]
+
+[node name="Layer" parent="LayerManager" instance=ExtResource("1_5erdv")]
+
 [node name="CameraHolder" type="Node3D" parent="."]
 script = ExtResource("2_ikcpc")
-speedMult = Vector2(0.016, 0.023)
+speedMagnitude = -3
+speedMult = Vector2(16.5, 23)
 angle = -45.0
 
 [node name="Camera3D" type="Camera3D" parent="CameraHolder"]

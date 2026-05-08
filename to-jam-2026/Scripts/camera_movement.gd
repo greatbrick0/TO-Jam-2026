@@ -5,6 +5,7 @@ var cameraMoving: bool = false
 var prevMousePos: Vector2
 var prevCameraPos: Vector3
 
+@export var speedMagnitude: int = -2
 @export var speedMult: Vector2 = Vector2.ONE
 @export var angle: float = 20.0
 
@@ -23,9 +24,9 @@ func _process(delta):
 	if(cameraMoving):
 		var mouseDifference: Vector2 = prevMousePos - get_viewport().get_mouse_position()
 		var modifiedDisplacement: Vector3 = Vector3(
-			mouseDifference.x * speedMult.x, 
+			mouseDifference.x * speedMult.x * pow(10, speedMagnitude), 
 			0, 
-			mouseDifference.y * speedMult.y
+			mouseDifference.y * speedMult.y * pow(10, speedMagnitude)
 			).rotated(Vector3.UP, deg_to_rad(angle))
 		
 		global_position = prevCameraPos + modifiedDisplacement
