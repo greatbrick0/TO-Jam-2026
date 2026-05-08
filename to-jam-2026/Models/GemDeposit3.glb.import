@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://xfrk8qttplrf"
-path="res://.godot/imported/GemDeposit1.glb-635e9d6ecd8bc6206340ed2420ca171e.scn"
+uid="uid://h5ewlnduhtv1"
+path="res://.godot/imported/GemDeposit3.glb-b9b76f12a443a05fd40df342fa154cae.scn"
 
 [deps]
 
-source_file="res://Models/GemDeposit1.glb"
-dest_files=["res://.godot/imported/GemDeposit1.glb-635e9d6ecd8bc6206340ed2420ca171e.scn"]
+source_file="res://Models/GemDeposit3.glb"
+dest_files=["res://.godot/imported/GemDeposit3.glb-b9b76f12a443a05fd40df342fa154cae.scn"]
 
 [params]
 
@@ -32,6 +32,17 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
+_subresources={
+"materials": {
+"GradiantMap1Material": {
+"use_external/enabled": true,
+"use_external/path": "uid://b34bkb3eaej5f"
+},
+"Material": {
+"use_external/enabled": true,
+"use_external/path": "uid://cirpd8f3f2fi2"
+}
+}
+}
 gltf/naming_version=1
 gltf/embedded_image_handling=1

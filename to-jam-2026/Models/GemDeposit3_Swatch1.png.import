@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bk3pqm6bro112"
-path.s3tc="res://.godot/imported/GemDeposit1_Swatch1.png-712c805fabe642283965767faaee19f8.s3tc.ctex"
+uid="uid://m7mnxmfhtpxf"
+path.s3tc="res://.godot/imported/GemDeposit3_Swatch1.png-f761f3bb1c1277e6715f7fcb78eec82e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Models/GemDeposit1_Swatch1.png"
-dest_files=["res://.godot/imported/GemDeposit1_Swatch1.png-712c805fabe642283965767faaee19f8.s3tc.ctex"]
+source_file="res://Models/GemDeposit3_Swatch1.png"
+dest_files=["res://.godot/imported/GemDeposit3_Swatch1.png-f761f3bb1c1277e6715f7fcb78eec82e.s3tc.ctex"]
 
 [params]
 
