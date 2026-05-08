@@ -1,8 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://bhw1ggv063vvf"]
+[gd_scene load_steps=3 format=3 uid="uid://bhw1ggv063vvf"]
+
+[ext_resource type="Script" uid="uid://dcrql415mlaig" path="res://Scripts/machine.gd" id="1_xuuum"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_7aq5r"]
 
 [node name="Machine" type="Node3D"]
+script = ExtResource("1_xuuum")
 
 [node name="Visuals" type="Node3D" parent="."]
 

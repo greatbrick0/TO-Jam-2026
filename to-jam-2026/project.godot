@@ -24,6 +24,7 @@ window/size/resizable=false
 
 folder_colors={
 "res://Images/": "purple",
+"res://Models/": "yellow",
 "res://Music Manager/": "pink",
 "res://Scenes/": "blue",
 "res://Scripts/": "green",
