@@ -1,11 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://cn6ov1jwexpha"]
+[gd_scene load_steps=4 format=3 uid="uid://r4fcro0nqyw2"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_swqpq"]
-size = Vector3(1, 0.5, 1)
+[ext_resource type="PackedScene" uid="uid://di3gytn8l16kg" path="res://Models/Thermal Haul_ConveyorStraight.glb" id="1_h02uc"]
+[ext_resource type="PackedScene" uid="uid://doffetnyn2mby" path="res://Models/Thermal Haul_ConveyorRight.glb" id="2_dq7g1"]
+[ext_resource type="PackedScene" uid="uid://bikgxrtpkln2u" path="res://Models/Thermal Haul_ConveyorLeft.glb" id="3_de87k"]
 
 [node name="Coveyor" type="Node3D"]
 
 [node name="Visuals" type="Node3D" parent="."]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Visuals"]
-mesh = SubResource("BoxMesh_swqpq")
+[node name="Thermal Haul_ConveyorStraight" parent="." instance=ExtResource("1_h02uc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+
+[node name="Thermal Haul_ConveyorRight" parent="." instance=ExtResource("2_dq7g1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+visible = false
+
+[node name="Thermal Haul_ConveyorLeft" parent="." instance=ExtResource("3_de87k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+visible = false
