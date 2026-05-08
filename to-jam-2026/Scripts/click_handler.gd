@@ -5,10 +5,10 @@ signal start_camera_move()
 signal stop_camera_move()
 signal click_signal(pos: Vector3)
 
-func _on_input_event(camera, event, event_position, normal, shape_idx):
+func _on_input_event(camera: Camera3D, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int):
 	if(not event is InputEventMouseButton):
 		return
-	
+		
 	if(event.pressed):
 		if(event.button_index == MOUSE_BUTTON_LEFT):
 			click_signal.emit(event_position)

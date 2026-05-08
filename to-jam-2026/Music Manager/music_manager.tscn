@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://bk40prxj8a3r7"]
+
+[sub_resource type="AudioStreamGenerator" id="AudioStreamGenerator_a0g8o"]
+mix_rate_mode = 0
+mix_rate = 20.0
+buffer_length = 1.0
+
+[node name="MusicManager" type="Node"]
+
+[node name="Track0" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamGenerator_a0g8o")
+volume_db = -50.0
+autoplay = true
+
+[node name="Track1" type="AudioStreamPlayer" parent="."]
+volume_db = -50.0
+
+[node name="Track2" type="AudioStreamPlayer" parent="."]
+volume_db = -50.0
+
+[node name="GeneralEffects" type="Node" parent="."]
+
+[node name="MenuBlip1" type="AudioStreamPlayer" parent="GeneralEffects"]
+volume_db = -10.0
+
+[node name="MenuBlip2" type="AudioStreamPlayer" parent="GeneralEffects"]
+volume_db = -10.0
+
+[node name="MenuBlip3" type="AudioStreamPlayer" parent="GeneralEffects"]
+volume_db = -10.0
+
+[node name="MenuBlip4" type="AudioStreamPlayer" parent="GeneralEffects"]
+volume_db = -10.0
+pitch_scale = 1.5
+
+[node name="RobotPlace1" type="AudioStreamPlayer" parent="GeneralEffects"]
+volume_db = -20.0
+pitch_scale = 1.5

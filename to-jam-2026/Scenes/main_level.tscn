@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://4c6p7308hx2l"]
+
+[ext_resource type="Script" uid="uid://cuolqwa3qlyi7" path="res://Scripts/click_handler.gd" id="1_q2fht"]
+[ext_resource type="Script" uid="uid://tg4ahbs4qlc8" path="res://Scripts/camera_movement.gd" id="2_ikcpc"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_ikcpc"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_5erdv"]
+
+[node name="MainLevel" type="Node3D"]
+
+[node name="CameraHolder" type="Node3D" parent="."]
+script = ExtResource("2_ikcpc")
+speedMult = Vector2(0.016, 0.023)
+angle = -45.0
+
+[node name="Camera3D" type="Camera3D" parent="CameraHolder"]
+transform = Transform3D(0.707107, 0.5, -0.5, 0, 0.707107, 0.707107, 0.707107, -0.5, 0.5, -7, 7, 7)
+projection = 1
+size = 12.0
+
+[node name="ClickPlane" type="Area3D" parent="."]
+script = ExtResource("1_q2fht")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ClickPlane"]
+shape = SubResource("WorldBoundaryShape3D_ikcpc")
+
+[node name="FunTriangle" type="MeshInstance3D" parent="."]
+mesh = SubResource("PrismMesh_5erdv")
+
+[connection signal="input_event" from="ClickPlane" to="ClickPlane" method="_on_input_event"]
+[connection signal="mouse_exited" from="ClickPlane" to="ClickPlane" method="_on_mouse_exited"]
+[connection signal="start_camera_move" from="ClickPlane" to="CameraHolder" method="OnStartCameraMove"]
+[connection signal="stop_camera_move" from="ClickPlane" to="CameraHolder" method="OnStopCameraMove"]
