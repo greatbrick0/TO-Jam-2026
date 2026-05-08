@@ -1,7 +1,7 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://b34bkb3eaej5f"]
 
 [ext_resource type="Shader" uid="uid://dadxglf71mub1" path="res://Models/Materials/Shaderzx/BaseMaterial.gdshader" id="1_1tcpq"]
-[ext_resource type="Texture2D" uid="uid://ba7lrlktjbuiy" path="res://Models/Thermal Haul_ConveyorRight_Swatch1.png" id="2_1cqgy"]
+[ext_resource type="Texture2D" uid="uid://dmm8276hhm328" path="res://Models/Thermal Haul_ConveyorStraight_Swatch1.png" id="2_1cqgy"]
 
 [resource]
 render_priority = 0
