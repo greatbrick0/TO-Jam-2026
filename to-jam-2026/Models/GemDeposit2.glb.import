@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bikgxrtpkln2u"
-path="res://.godot/imported/Thermal Haul_ConveyorLeft.glb-063fdd011946fa08b30e3cce1543ae79.scn"
+uid="uid://cvypelqnlv17g"
+path="res://.godot/imported/GemDeposit2.glb-fdba2c81ad3c692e69a1e85bb53dc1f0.scn"
 
 [deps]
 
-source_file="res://Models/Thermal Haul_ConveyorLeft.glb"
-dest_files=["res://.godot/imported/Thermal Haul_ConveyorLeft.glb-063fdd011946fa08b30e3cce1543ae79.scn"]
+source_file="res://Models/GemDeposit2.glb"
+dest_files=["res://.godot/imported/GemDeposit2.glb-fdba2c81ad3c692e69a1e85bb53dc1f0.scn"]
 
 [params]
 
@@ -37,6 +37,10 @@ _subresources={
 "GradiantMap1Material": {
 "use_external/enabled": true,
 "use_external/path": "uid://b34bkb3eaej5f"
+},
+"Material": {
+"use_external/enabled": true,
+"use_external/path": "uid://cirpd8f3f2fi2"
 }
 }
 }
