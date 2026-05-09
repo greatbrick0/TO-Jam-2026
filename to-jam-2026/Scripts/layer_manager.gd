@@ -9,8 +9,5 @@ func SetActiveLayer(newLayerIndex: int) -> void:
 	if(newLayerIndex < 0 or newLayerIndex > highestKnownLayer):
 		return
 
-func PlaceConveyor(newpos: Vector2i) -> void:
-	pass
-
-func PlaceMachine(newpos: Vector2i) -> void:
-	pass
+func PlaceObject(obj: PackedScene, newPos: Vector2i, rotMatrix: Vector4) -> void:
+	layers[activeLayerIndex].PlaceObject(obj, newPos, rotMatrix)

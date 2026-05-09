@@ -2,16 +2,22 @@ extends CanvasLayer
 
 @export var layerManager: LayerManager
 
+var rotations: Array[Vector4] = [Vector4(1, 0, 1, 0), Vector4(0, -1, 0, 1), Vector4(-1, 0, -1, 0), Vector4(0, 1, 0, -1)]
+
+@export var placeableList: Array[PlaceableBar]
 var isPlacing: bool = false
+var rotationIndex: int = 0
+var placingIndex: int = 0
 
 func _process(delta):
 	if(Input.is_action_just_pressed("ui_cancel")):
 		if(isPlacing):
-			isPlacing = false
+			ResetIsPlacing()
 	
 	for ii in range(1, 11):
 		if(Input.is_action_just_pressed(str(ii))):
 			isPlacing = true
+			placingIndex = ii - 1
 			print(ii)
 	
 	if(Input.is_action_just_pressed("ui_up")):
@@ -21,13 +27,20 @@ func _process(delta):
 	
 	if(isPlacing):
 		if(Input.is_action_just_pressed("RotateAnti")):
+			rotationIndex -= 1
 			print("antirotate")
 		elif(Input.is_action_just_pressed("Rotate")):
+			rotationIndex += 1
 			print("rotate")
+
+func ResetIsPlacing() -> void:
+	isPlacing = false
 
 func _on_hover_signal(pos):
 	if(isPlacing):
 		print(pos)
 
 func _on_click_signal(pos):
+	if(isPlacing):
+		layerManager.PlaceObject(placeableList[0].placeables[placingIndex], pos, rotations[rotationIndex])
 	print("click")

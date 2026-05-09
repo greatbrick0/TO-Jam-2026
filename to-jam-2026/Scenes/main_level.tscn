@@ -15,10 +15,13 @@ ambient_light_color = Color(1, 1, 1, 1)
 
 [node name="MainLevel" type="Node3D"]
 
-[node name="LayerManager" type="Node3D" parent="."]
+[node name="LayerManager" type="Node3D" parent="." node_paths=PackedStringArray("layers")]
 script = ExtResource("1_a2ia3")
+layers = [NodePath("Layer0"), NodePath("Layer1")]
 
-[node name="Layer" parent="LayerManager" instance=ExtResource("1_5erdv")]
+[node name="Layer0" parent="LayerManager" instance=ExtResource("1_5erdv")]
+
+[node name="Layer1" parent="LayerManager" instance=ExtResource("1_5erdv")]
 
 [node name="CameraHolder" type="Node3D" parent="."]
 script = ExtResource("2_ikcpc")

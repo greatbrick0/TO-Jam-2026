@@ -1,5 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://dmlvh0f22f6ni"]
+[gd_scene load_steps=3 format=3 uid="uid://dmlvh0f22f6ni"]
 
 [ext_resource type="PackedScene" uid="uid://bhw1ggv063vvf" path="res://Scenes/machine.tscn" id="1_ga72t"]
+[ext_resource type="PackedScene" uid="uid://bg3rrle08uv64" path="res://Models/Thermal Haul_Miner.glb" id="2_xfpv8"]
 
 [node name="MinerMachine" instance=ExtResource("1_ga72t")]
+
+[node name="MeshInstance3D" parent="Visuals" index="0"]
+visible = false
+
+[node name="Thermal Haul_Miner" parent="Visuals" index="1" instance=ExtResource("2_xfpv8")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
