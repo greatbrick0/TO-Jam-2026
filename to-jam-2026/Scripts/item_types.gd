@@ -6,8 +6,8 @@ enum Items {
 	Waste,
 }
 
-var itemScenes: Dictionary[Items, PackedScene] = {
-	PurpleCrystal = preload("res://Scenes/item.tscn"),
-	GreenCrystal = preload("res://Scenes/item.tscn"),
-	Waste = preload("res://Scenes/item.tscn"),
+var itemScenes: Dictionary[int, PackedScene] = {
+	Items.PurpleCrystal: preload("res://Scenes/item.tscn"),
+	Items.GreenCrystal: preload("res://Scenes/item.tscn"),
+	Items.Waste: preload("res://Scenes/item.tscn"),
 	}

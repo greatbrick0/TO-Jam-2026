@@ -12,12 +12,11 @@ func _on_input_event(camera: Camera3D, event: InputEvent, event_position: Vector
 	if(not event is InputEventMouseButton):
 		if(SimplifyVec(event_position) != prevHoveredTile):
 			prevHoveredTile = SimplifyVec(event_position)
-			hover_signal
+			hover_signal.emit(prevHoveredTile)
 		return
 	
 	if(event.is_pressed()):
 		if(event.button_index == MOUSE_BUTTON_LEFT):
-			print(event_position)
 			click_signal.emit(SimplifyVec(event_position))
 		elif(event.button_index == MOUSE_BUTTON_RIGHT):
 			start_camera_move.emit()
