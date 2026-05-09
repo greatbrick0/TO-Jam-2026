@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmlvh0f22f6ni"]
+
+[ext_resource type="PackedScene" uid="uid://bhw1ggv063vvf" path="res://Scenes/machine.tscn" id="1_ga72t"]
+
+[node name="MinerMachine" instance=ExtResource("1_ga72t")]
