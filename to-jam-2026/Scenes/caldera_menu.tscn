@@ -1,14 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://clh58gfv0fsu0"]
+[gd_scene load_steps=7 format=3 uid="uid://clh58gfv0fsu0"]
 
-[ext_resource type="ArrayMesh" uid="uid://h18gipbw007a" path="res://Models/caldera.obj" id="1_7q1kq"]
-[ext_resource type="Material" uid="uid://c88gyrier8wwg" path="res://Models/Materials/LiquidLava2.tres" id="2_7q1kq"]
+[ext_resource type="ArrayMesh" uid="uid://ssbs4omwdect" path="res://Models/caldera.obj" id="1_7q1kq"]
+[ext_resource type="Material" uid="uid://da7ahq1qgc7mx" path="res://Models/Materials/LiquidLavaMenu.tres" id="2_od2ib"]
 [ext_resource type="Texture2D" uid="uid://b4bol2exbr80w" path="res://Models/Materials/rock.png" id="3_skxbn"]
+[ext_resource type="Texture2D" uid="uid://cye1wrk8uqe3f" path="res://Models/Materials/rockBase.png" id="4_skxbn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1se2n"]
 albedo_texture = ExtResource("3_skxbn")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lx1yx"]
-albedo_texture = ExtResource("3_skxbn")
+albedo_texture = ExtResource("4_skxbn")
 
 [node name="StartMenu" type="Node2D"]
 
@@ -67,8 +68,8 @@ theme_override_font_sizes/font_size = 50
 text = "Thermal Haul"
 
 [node name="Caldera" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15519, 0, -1.6749)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.897425, 0, 0.752632)
 mesh = ExtResource("1_7q1kq")
-surface_material_override/0 = ExtResource("2_7q1kq")
+surface_material_override/0 = ExtResource("2_od2ib")
 surface_material_override/1 = SubResource("StandardMaterial3D_1se2n")
 surface_material_override/2 = SubResource("StandardMaterial3D_lx1yx")
