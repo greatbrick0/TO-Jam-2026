@@ -19,6 +19,18 @@ ambient_light_energy = 2.95
 
 [node name="StartMenu" type="Node2D"]
 
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+size = Vector2i(1280, 720)
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(0.688355, -0.329313, 0.646313, 0, 0.891007, 0.45399, -0.725374, -0.312506, 0.613328, 4.909, 4, 4.833)
+current = true
+fov = 23.0
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Control" type="Control" parent="CanvasLayer"]
@@ -40,6 +52,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control/Background"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -73,20 +86,18 @@ theme_override_colors/font_color = Color(1, 0.304688, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "Thermal Haul"
 
-[node name="Caldera" type="MeshInstance3D" parent="."]
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="Caldera" type="MeshInstance3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.897425, 0, 0.752632)
 mesh = ExtResource("1_7q1kq")
+skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("2_od2ib")
 surface_material_override/1 = SubResource("StandardMaterial3D_1se2n")
 surface_material_override/2 = SubResource("StandardMaterial3D_lx1yx")
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.688355, -0.329313, 0.646313, 0, 0.891007, 0.45399, -0.725374, -0.312506, 0.613328, 4.909, 4, 4.833)
-current = true
-fov = 23.0
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Node3D"]
 environment = SubResource("Environment_od2ib")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Node3D"]
 transform = Transform3D(0.653421, 0.669623, -0.353052, 0, 0.466387, 0.884581, 0.756995, -0.578003, 0.304747, 0, 0, 0)
