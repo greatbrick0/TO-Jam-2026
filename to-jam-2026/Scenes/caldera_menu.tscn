@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://clh58gfv0fsu0"]
+[gd_scene load_steps=8 format=3 uid="uid://clh58gfv0fsu0"]
 
 [ext_resource type="ArrayMesh" uid="uid://ssbs4omwdect" path="res://Models/caldera.obj" id="1_7q1kq"]
 [ext_resource type="Material" uid="uid://da7ahq1qgc7mx" path="res://Models/Materials/LiquidLavaMenu.tres" id="2_od2ib"]
@@ -10,6 +10,12 @@ albedo_texture = ExtResource("3_skxbn")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lx1yx"]
 albedo_texture = ExtResource("4_skxbn")
+
+[sub_resource type="Environment" id="Environment_od2ib"]
+ambient_light_source = 3
+ambient_light_color = Color(0.321728, 0.321728, 0.321728, 1)
+ambient_light_sky_contribution = 0.33
+ambient_light_energy = 2.95
 
 [node name="StartMenu" type="Node2D"]
 
@@ -78,3 +84,9 @@ surface_material_override/2 = SubResource("StandardMaterial3D_lx1yx")
 transform = Transform3D(0.688355, -0.329313, 0.646313, 0, 0.891007, 0.45399, -0.725374, -0.312506, 0.613328, 4.909, 4, 4.833)
 current = true
 fov = 23.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_od2ib")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.653421, 0.669623, -0.353052, 0, 0.466387, 0.884581, 0.756995, -0.578003, 0.304747, 0, 0, 0)
