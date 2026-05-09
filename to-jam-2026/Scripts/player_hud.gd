@@ -21,26 +21,31 @@ func _process(delta):
 			print(ii)
 	
 	if(Input.is_action_just_pressed("ui_up")):
-		print("up")
+		layerManager.SetActiveLayer(layerManager.activeLayerIndex + 1)
 	elif(Input.is_action_just_pressed("ui_down")):
-		print("down")
+		layerManager.SetActiveLayer(layerManager.activeLayerIndex - 1)
 	
 	if(isPlacing):
 		if(Input.is_action_just_pressed("RotateAnti")):
 			rotationIndex -= 1
-			print("antirotate")
+			rotationIndex %= len(rotations)
 		elif(Input.is_action_just_pressed("Rotate")):
 			rotationIndex += 1
-			print("rotate")
+			rotationIndex %= len(rotations)
 
 func ResetIsPlacing() -> void:
 	isPlacing = false
 
 func _on_hover_signal(pos):
 	if(isPlacing):
-		print(pos)
+		if(layerManager.CanPlaceObject(pos, rotationIndex)):
+			print(pos)
 
 func _on_click_signal(pos):
 	if(isPlacing):
-		layerManager.PlaceObject(placeableList[0].placeables[placingIndex], pos, rotations[rotationIndex])
+		if(!layerManager.CanPlaceObject(pos, rotationIndex)):
+			return
+		layerManager.PlaceObject(placeableList[0].placeables[placingIndex], pos, rotationIndex)
+		if(placingIndex != 0):
+			ResetIsPlacing()
 	print("click")

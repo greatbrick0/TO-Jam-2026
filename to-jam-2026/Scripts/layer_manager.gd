@@ -5,9 +5,23 @@ class_name LayerManager
 var activeLayerIndex: int = 1
 var highestKnownLayer: int = 1
 
+func _ready() -> void:
+	for ii in get_children():
+		if(!layers.has(ii)):
+			layers.append(ii)
+	SetActiveLayer(activeLayerIndex)
+
 func SetActiveLayer(newLayerIndex: int) -> void:
 	if(newLayerIndex < 0 or newLayerIndex > highestKnownLayer):
 		return
+	activeLayerIndex = newLayerIndex
+	print(activeLayerIndex)
+	for ii in range(len(layers)):
+		layers[ii].visible = (ii <= activeLayerIndex)
+		layers[ii].position.y = (ii - activeLayerIndex)
 
-func PlaceObject(obj: PackedScene, newPos: Vector2i, rotMatrix: Vector4) -> void:
-	layers[activeLayerIndex].PlaceObject(obj, newPos, rotMatrix)
+func CanPlaceObject(newPos: Vector2i, rotInt: int) -> bool:
+	return layers[activeLayerIndex].CanPlaceObject(newPos, rotInt)
+
+func PlaceObject(obj: PackedScene, newPos: Vector2i, rotInt: int) -> void:
+	layers[activeLayerIndex].PlaceObject(obj, newPos, rotInt)
