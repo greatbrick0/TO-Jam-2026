@@ -9,4 +9,5 @@
 script = ExtResource("1_ck482")
 placeables = Array[PackedScene]([ExtResource("1_b7aux"), ExtResource("2_s8m4l")])
 ghosts = Array[PackedScene]([ExtResource("1_2reb3"), ExtResource("1_2reb3")])
+names = Array[int]([0, 1])
 metadata/_custom_type_script = "uid://bniy585gb4ry8"

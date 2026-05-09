@@ -11,4 +11,4 @@ func _ready():
 func GenerateLava() -> void:
 	for ii in bounds.x:
 		for jj in bounds.y:
-			addedTiles[Vector2i(ii - bounds.x/2, jj - bounds.y/2,)] = [lavaScene, 0]
+			addedTiles[Vector2i(ii - bounds.x/2, jj - bounds.y/2)] = [lavaScene, 0, PlaceableBar.MachineTypes.Lava]

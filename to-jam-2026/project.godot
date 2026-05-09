@@ -17,6 +17,7 @@ config/icon="res://Images/icon.svg"
 [autoload]
 
 ItemTypes="*res://Scripts/item_types.gd"
+MusicManager="*res://Music Manager/music_manager.tscn"
 
 [display]
 
@@ -33,6 +34,7 @@ folder_colors={
 "res://Scenes/": "blue",
 "res://Scenes/Machines/": "gray",
 "res://Scripts/": "green",
+"res://Scripts/Machines/": "gray",
 "res://Sounds/": "pink"
 }
 

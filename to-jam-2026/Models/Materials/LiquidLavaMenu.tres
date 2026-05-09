@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://da7ahq1qgc7mx"]
 
-[ext_resource type="Shader" uid="uid://baq7t2v47rsc8" path="res://Models/Materials/Shaderzx/LiquidLava.gdshader" id="1_1nu5j"]
+[ext_resource type="Shader" path="res://Models/Materials/Shaderzx/LiquidLava.gdshader" id="1_1nu5j"]
 
 [sub_resource type="Gradient" id="Gradient_5b31w"]
 offsets = PackedFloat32Array(0, 0.0010627, 0.0031881, 0.053135, 0.16153, 0.238045, 0.291457, 0.687566, 0.705632, 0.820404, 0.920298)

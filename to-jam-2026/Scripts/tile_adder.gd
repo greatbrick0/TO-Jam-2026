@@ -10,4 +10,4 @@ func _ready():
 func AddTiles() -> void:
 	var layer: Layer = get_parent()
 	for ii in addedTiles:
-		layer.PlaceObject(addedTiles[ii][0], ii, addedTiles[ii][1])
+		layer.PlaceObject(addedTiles[ii][0], ii, addedTiles[ii][1], addedTiles[ii][2])

@@ -38,14 +38,15 @@ func ResetIsPlacing() -> void:
 
 func _on_hover_signal(pos):
 	if(isPlacing):
-		if(layerManager.CanPlaceObject(pos, rotationIndex)):
+		if(layerManager.CanPlaceObject(pos, rotationIndex, placeableList[0].names[placingIndex])):
 			print(pos)
 
 func _on_click_signal(pos):
 	if(isPlacing):
-		if(!layerManager.CanPlaceObject(pos, rotationIndex)):
+		if(!layerManager.CanPlaceObject(pos, rotationIndex, placeableList[0].names[placingIndex])):
+			MusicManager.PlayGeneral(0)
 			return
-		layerManager.PlaceObject(placeableList[0].placeables[placingIndex], pos, rotationIndex)
+		layerManager.PlaceObject(placeableList[0].placeables[placingIndex], pos, rotationIndex, placeableList[0].names[placingIndex])
 		if(placingIndex != 0):
 			ResetIsPlacing()
 	print("click")

@@ -1,6 +1,7 @@
 extends Node
 
 enum Items {
+	None,
 	PurpleCrystal,
 	GreenCrystal,
 	Waste,

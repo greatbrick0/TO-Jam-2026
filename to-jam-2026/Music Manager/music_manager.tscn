@@ -1,4 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://bk40prxj8a3r7"]
+[gd_scene load_steps=5 format=3 uid="uid://bk40prxj8a3r7"]
+
+[ext_resource type="Script" uid="uid://dtusiiaqjyn8t" path="res://Music Manager/music_manager.gd" id="1_abjkx"]
+[ext_resource type="AudioStream" uid="uid://djwm0krrqab8o" path="res://Sounds/error1.wav" id="1_l6w6c"]
+[ext_resource type="AudioStream" uid="uid://vg764qssjl7x" path="res://Sounds/process1.wav" id="2_abjkx"]
 
 [sub_resource type="AudioStreamGenerator" id="AudioStreamGenerator_a0g8o"]
 mix_rate_mode = 0
@@ -6,6 +10,7 @@ mix_rate = 20.0
 buffer_length = 1.0
 
 [node name="MusicManager" type="Node"]
+script = ExtResource("1_abjkx")
 
 [node name="Track0" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamGenerator_a0g8o")
@@ -21,9 +26,11 @@ volume_db = -50.0
 [node name="GeneralEffects" type="Node" parent="."]
 
 [node name="MenuBlip1" type="AudioStreamPlayer" parent="GeneralEffects"]
+stream = ExtResource("1_l6w6c")
 volume_db = -10.0
 
 [node name="MenuBlip2" type="AudioStreamPlayer" parent="GeneralEffects"]
+stream = ExtResource("2_abjkx")
 volume_db = -10.0
 
 [node name="MenuBlip3" type="AudioStreamPlayer" parent="GeneralEffects"]

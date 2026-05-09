@@ -20,8 +20,8 @@ func SetActiveLayer(newLayerIndex: int) -> void:
 		layers[ii].visible = (ii <= activeLayerIndex)
 		layers[ii].position.y = (ii - activeLayerIndex)
 
-func CanPlaceObject(newPos: Vector2i, rotInt: int) -> bool:
-	return layers[activeLayerIndex].CanPlaceObject(newPos, rotInt)
+func CanPlaceObject(newPos: Vector2i, rotInt: int, machineName: PlaceableBar.MachineTypes) -> bool:
+	return layers[activeLayerIndex].CanPlaceObject(newPos, rotInt, machineName)
 
-func PlaceObject(obj: PackedScene, newPos: Vector2i, rotInt: int) -> void:
-	layers[activeLayerIndex].PlaceObject(obj, newPos, rotInt)
+func PlaceObject(obj: PackedScene, newPos: Vector2i, rotInt: int, machineName: PlaceableBar.MachineTypes) -> void:
+	layers[activeLayerIndex].PlaceObject(obj, newPos, rotInt, machineName)
