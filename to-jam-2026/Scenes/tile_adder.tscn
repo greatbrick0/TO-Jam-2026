@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0qekpdxv2fw0"]
+
+[ext_resource type="Script" uid="uid://c45h36nk5jee3" path="res://Scripts/tile_adder.gd" id="1_f71pj"]
+
+[node name="TileAdder" type="Node3D"]
+script = ExtResource("1_f71pj")
