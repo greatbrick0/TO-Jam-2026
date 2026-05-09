@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://r4fcro0nqyw2"]
+[gd_scene load_steps=4 format=3 uid="uid://r4fcro0nqyw2"]
 
 [ext_resource type="PackedScene" uid="uid://di3gytn8l16kg" path="res://Models/Thermal Haul_ConveyorStraight.glb" id="1_h02uc"]
 [ext_resource type="PackedScene" uid="uid://doffetnyn2mby" path="res://Models/Thermal Haul_ConveyorRight.glb" id="2_dq7g1"]
 [ext_resource type="PackedScene" uid="uid://bikgxrtpkln2u" path="res://Models/Thermal Haul_ConveyorLeft.glb" id="3_de87k"]
-[ext_resource type="PackedScene" uid="uid://buh7tlvbhx8ly" path="res://Models/Thermal Haul_Polisher.glb" id="4_dq7g1"]
 
 [node name="Coveyor" type="Node3D"]
 
@@ -17,9 +16,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 visible = false
 
 [node name="Thermal Haul_ConveyorLeft" parent="." instance=ExtResource("3_de87k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
-visible = false
-
-[node name="Thermal Haul_Polisher" parent="." instance=ExtResource("4_dq7g1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 visible = false
