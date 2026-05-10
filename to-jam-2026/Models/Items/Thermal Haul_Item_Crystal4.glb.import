@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://di3gytn8l16kg"
-path="res://.godot/imported/Thermal Haul_ConveyorStraight.glb-60710a2269c665edac2f9b1e6fb8dad7.scn"
+uid="uid://bl8upukqaht0k"
+path="res://.godot/imported/Thermal Haul_Item_Crystal4.glb-b7859da0913eb148e07e6c6c54a26fd2.scn"
 
 [deps]
 
-source_file="res://Models/Thermal Haul_ConveyorStraight.glb"
-dest_files=["res://.godot/imported/Thermal Haul_ConveyorStraight.glb-60710a2269c665edac2f9b1e6fb8dad7.scn"]
+source_file="res://Models/Items/Thermal Haul_Item_Crystal4.glb"
+dest_files=["res://.godot/imported/Thermal Haul_Item_Crystal4.glb-b7859da0913eb148e07e6c6c54a26fd2.scn"]
 
 [params]
 
@@ -35,6 +35,10 @@ import_script/path=""
 _subresources={
 "materials": {
 "GradiantMap1Material": {
+"use_external/enabled": true,
+"use_external/path": "uid://cirpd8f3f2fi2"
+},
+"Material": {
 "use_external/enabled": true,
 "use_external/path": "uid://b34bkb3eaej5f"
 }

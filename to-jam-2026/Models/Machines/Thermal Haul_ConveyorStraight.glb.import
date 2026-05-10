@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c8ot0g3057p2t"
-path="res://.godot/imported/Thermal Haul_Magnet.glb-2f4f2fe55f13bebb99f9e6c012f94517.scn"
+uid="uid://di3gytn8l16kg"
+path="res://.godot/imported/Thermal Haul_ConveyorStraight.glb-44a8b2fe659410feab8e4b65a6eb30d2.scn"
 
 [deps]
 
-source_file="res://Models/Thermal Haul_Magnet.glb"
-dest_files=["res://.godot/imported/Thermal Haul_Magnet.glb-2f4f2fe55f13bebb99f9e6c012f94517.scn"]
+source_file="res://Models/Machines/Thermal Haul_ConveyorStraight.glb"
+dest_files=["res://.godot/imported/Thermal Haul_ConveyorStraight.glb-44a8b2fe659410feab8e4b65a6eb30d2.scn"]
 
 [params]
 

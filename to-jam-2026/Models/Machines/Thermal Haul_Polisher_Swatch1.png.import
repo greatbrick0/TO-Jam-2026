@@ -2,10 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmm8276hhm328"
-path="res://.godot/imported/Thermal Haul_ConveyorStraight_Swatch1.png-9f9adcbaf384e694446f3df762337f04.ctex"
+uid="uid://5pq4mi4hb4jn"
+path.s3tc="res://.godot/imported/Thermal Haul_Polisher_Swatch1.png-c442e6b11d7acb25fe2e7bb11b7ce056.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 generator_parameters={
 "md5": "85a32871f8b412a7183b7ee630fb3ae6"
@@ -13,12 +14,12 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Models/Thermal Haul_ConveyorStraight_Swatch1.png"
-dest_files=["res://.godot/imported/Thermal Haul_ConveyorStraight_Swatch1.png-9f9adcbaf384e694446f3df762337f04.ctex"]
+source_file="res://Models/Machines/Thermal Haul_Polisher_Swatch1.png"
+dest_files=["res://.godot/imported/Thermal Haul_Polisher_Swatch1.png-c442e6b11d7acb25fe2e7bb11b7ce056.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

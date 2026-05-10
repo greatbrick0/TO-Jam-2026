@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bg3rrle08uv64"
-path="res://.godot/imported/Thermal Haul_Miner.glb-413433d2a69f6798a84c064456af15d5.scn"
+path="res://.godot/imported/Thermal Haul_Miner.glb-8b87159ecf8412a13aa523a1df50099f.scn"
 
 [deps]
 
-source_file="res://Models/Thermal Haul_Miner.glb"
-dest_files=["res://.godot/imported/Thermal Haul_Miner.glb-413433d2a69f6798a84c064456af15d5.scn"]
+source_file="res://Models/Machines/Thermal Haul_Miner.glb"
+dest_files=["res://.godot/imported/Thermal Haul_Miner.glb-8b87159ecf8412a13aa523a1df50099f.scn"]
 
 [params]
 

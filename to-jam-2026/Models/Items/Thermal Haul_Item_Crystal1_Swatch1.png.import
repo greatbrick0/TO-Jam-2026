@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ba7lrlktjbuiy"
-path.s3tc="res://.godot/imported/Thermal Haul_ConveyorRight_Swatch1.png-b8b075761b7f96aebd3930c82507435f.s3tc.ctex"
+uid="uid://b76kqwag58qn6"
+path.s3tc="res://.godot/imported/Thermal Haul_Item_Crystal1_Swatch1.png-a411954de311e959db5bcfd846e487d8.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Models/Thermal Haul_ConveyorRight_Swatch1.png"
-dest_files=["res://.godot/imported/Thermal Haul_ConveyorRight_Swatch1.png-b8b075761b7f96aebd3930c82507435f.s3tc.ctex"]
+source_file="res://Models/Items/Thermal Haul_Item_Crystal1_Swatch1.png"
+dest_files=["res://.godot/imported/Thermal Haul_Item_Crystal1_Swatch1.png-a411954de311e959db5bcfd846e487d8.s3tc.ctex"]
 
 [params]
 

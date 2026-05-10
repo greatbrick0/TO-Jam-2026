@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://nhtlktpol40x"
-path="res://.godot/imported/GemDeposit3S.glb-594954a101fc81014f6fab7fd6eb2304.scn"
+path="res://.godot/imported/GemDeposit3S.glb-bd0029dc9331fa441c377540a3b5b018.scn"
 
 [deps]
 
-source_file="res://Models/GemDeposit3S.glb"
-dest_files=["res://.godot/imported/GemDeposit3S.glb-594954a101fc81014f6fab7fd6eb2304.scn"]
+source_file="res://Models/Machines/GemDeposit3S.glb"
+dest_files=["res://.godot/imported/GemDeposit3S.glb-bd0029dc9331fa441c377540a3b5b018.scn"]
 
 [params]
 

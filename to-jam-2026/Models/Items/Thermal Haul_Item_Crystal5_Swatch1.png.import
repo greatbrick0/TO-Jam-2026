@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5pq4mi4hb4jn"
-path.s3tc="res://.godot/imported/Thermal Haul_Polisher_Swatch1.png-23d7459707e63e85f036f81ad47811e7.s3tc.ctex"
+uid="uid://bvj3dukip6k4g"
+path.s3tc="res://.godot/imported/Thermal Haul_Item_Crystal5_Swatch1.png-9a74f45dd5ae9422e4cf702ded6b6dda.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Models/Thermal Haul_Polisher_Swatch1.png"
-dest_files=["res://.godot/imported/Thermal Haul_Polisher_Swatch1.png-23d7459707e63e85f036f81ad47811e7.s3tc.ctex"]
+source_file="res://Models/Items/Thermal Haul_Item_Crystal5_Swatch1.png"
+dest_files=["res://.godot/imported/Thermal Haul_Item_Crystal5_Swatch1.png-9a74f45dd5ae9422e4cf702ded6b6dda.s3tc.ctex"]
 
 [params]
 

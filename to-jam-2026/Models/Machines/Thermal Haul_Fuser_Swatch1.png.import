@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d23pxexyebkj2"
-path.s3tc="res://.godot/imported/GemDeposit3S_Swatch1.png-ec195ea2cf3a35430b08f14653d5c2c3.s3tc.ctex"
+uid="uid://cgcfxmi40t6l2"
+path.s3tc="res://.godot/imported/Thermal Haul_Fuser_Swatch1.png-6d3be7d9ea96141b6b08696abc5e3a9d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Models/GemDeposit3S_Swatch1.png"
-dest_files=["res://.godot/imported/GemDeposit3S_Swatch1.png-ec195ea2cf3a35430b08f14653d5c2c3.s3tc.ctex"]
+source_file="res://Models/Machines/Thermal Haul_Fuser_Swatch1.png"
+dest_files=["res://.godot/imported/Thermal Haul_Fuser_Swatch1.png-6d3be7d9ea96141b6b08696abc5e3a9d.s3tc.ctex"]
 
 [params]
 

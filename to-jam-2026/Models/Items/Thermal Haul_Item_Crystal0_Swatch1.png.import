@@ -2,11 +2,10 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://civtgoxpccn46"
-path.s3tc="res://.godot/imported/Thermal Haul_Magnet_Swatch1.png-ea1f7459fb1ea765c0e9b0b327ef3634.s3tc.ctex"
+uid="uid://cfb0cqorsvao"
+path="res://.godot/imported/Thermal Haul_Item_Crystal0_Swatch1.png-cb58ac29efc7dc48b8c457a8d72d01dd.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={
 "md5": "85a32871f8b412a7183b7ee630fb3ae6"
@@ -14,12 +13,12 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Models/Thermal Haul_Magnet_Swatch1.png"
-dest_files=["res://.godot/imported/Thermal Haul_Magnet_Swatch1.png-ea1f7459fb1ea765c0e9b0b327ef3634.s3tc.ctex"]
+source_file="res://Models/Items/Thermal Haul_Item_Crystal0_Swatch1.png"
+dest_files=["res://.godot/imported/Thermal Haul_Item_Crystal0_Swatch1.png-cb58ac29efc7dc48b8c457a8d72d01dd.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
@@ -35,4 +34,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

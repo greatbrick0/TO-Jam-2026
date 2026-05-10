@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bht4yci0lanpe"
-path="res://.godot/imported/Thermal Haul_Fuser.glb-5644fe78a9cb6f601c45dd57d76b5cb8.scn"
+uid="uid://c8ot0g3057p2t"
+path="res://.godot/imported/Thermal Haul_Magnet.glb-520f0fbddcf019f2a8fea6663a8def70.scn"
 
 [deps]
 
-source_file="res://Models/Thermal Haul_Fuser.glb"
-dest_files=["res://.godot/imported/Thermal Haul_Fuser.glb-5644fe78a9cb6f601c45dd57d76b5cb8.scn"]
+source_file="res://Models/Machines/Thermal Haul_Magnet.glb"
+dest_files=["res://.godot/imported/Thermal Haul_Magnet.glb-520f0fbddcf019f2a8fea6663a8def70.scn"]
 
 [params]
 
@@ -35,10 +35,6 @@ import_script/path=""
 _subresources={
 "materials": {
 "GradiantMap1Material": {
-"use_external/enabled": true,
-"use_external/path": "uid://b34bkb3eaej5f"
-},
-"Material": {
 "use_external/enabled": true,
 "use_external/path": "uid://b34bkb3eaej5f"
 }

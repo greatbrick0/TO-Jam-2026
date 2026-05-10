@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgcfxmi40t6l2"
-path.s3tc="res://.godot/imported/Thermal Haul_Fuser_Swatch1.png-6479357e278da4357a1da4062df4e8a5.s3tc.ctex"
+uid="uid://civtgoxpccn46"
+path.s3tc="res://.godot/imported/Thermal Haul_Magnet_Swatch1.png-a63b21020ec6adc80a2a47628d099fcf.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Models/Thermal Haul_Fuser_Swatch1.png"
-dest_files=["res://.godot/imported/Thermal Haul_Fuser_Swatch1.png-6479357e278da4357a1da4062df4e8a5.s3tc.ctex"]
+source_file="res://Models/Machines/Thermal Haul_Magnet_Swatch1.png"
+dest_files=["res://.godot/imported/Thermal Haul_Magnet_Swatch1.png-a63b21020ec6adc80a2a47628d099fcf.s3tc.ctex"]
 
 [params]
 

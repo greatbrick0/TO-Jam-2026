@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://buh7tlvbhx8ly"
-path="res://.godot/imported/Thermal Haul_Polisher.glb-eabcdffc4efe2e779174d8cda93fefa3.scn"
+uid="uid://h5ewlnduhtv1"
+path="res://.godot/imported/GemDeposit3.glb-f34259b0275ab2a0924f4660975e06d2.scn"
 
 [deps]
 
-source_file="res://Models/Thermal Haul_Polisher.glb"
-dest_files=["res://.godot/imported/Thermal Haul_Polisher.glb-eabcdffc4efe2e779174d8cda93fefa3.scn"]
+source_file="res://Models/Machines/GemDeposit3.glb"
+dest_files=["res://.godot/imported/GemDeposit3.glb-f34259b0275ab2a0924f4660975e06d2.scn"]
 
 [params]
 
@@ -37,6 +37,10 @@ _subresources={
 "GradiantMap1Material": {
 "use_external/enabled": true,
 "use_external/path": "uid://b34bkb3eaej5f"
+},
+"Material": {
+"use_external/enabled": true,
+"use_external/path": "uid://cirpd8f3f2fi2"
 }
 }
 }

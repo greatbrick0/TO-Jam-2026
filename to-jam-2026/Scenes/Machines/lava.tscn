@@ -1,13 +1,16 @@
 [gd_scene load_steps=4 format=3 uid="uid://xstedqn8yyao"]
 
-[ext_resource type="PackedScene" uid="uid://bhw1ggv063vvf" path="res://Scenes/machine.tscn" id="1_mdeji"]
+[ext_resource type="PackedScene" path="res://Scenes/machine.tscn" id="1_mdeji"]
 [ext_resource type="Material" uid="uid://bqsovchy5jadk" path="res://Models/Materials/LiquidLava2.tres" id="2_0h0o5"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_yoxo2"]
 size = Vector2(1, 1)
+subdivide_width = 32
+subdivide_depth = 32
 
 [node name="Lava" instance=ExtResource("1_mdeji")]
 
 [node name="MeshInstance3D" parent="Visuals" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00934398, -0.00574625, 0.0114355)
 material_override = ExtResource("2_0h0o5")
 mesh = SubResource("PlaneMesh_yoxo2")

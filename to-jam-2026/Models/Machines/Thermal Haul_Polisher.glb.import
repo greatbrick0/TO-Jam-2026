@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bikgxrtpkln2u"
-path="res://.godot/imported/Thermal Haul_ConveyorLeft.glb-063fdd011946fa08b30e3cce1543ae79.scn"
+uid="uid://buh7tlvbhx8ly"
+path="res://.godot/imported/Thermal Haul_Polisher.glb-91d64fd088852ee4d7f7ce38be4ce6ef.scn"
 
 [deps]
 
-source_file="res://Models/Thermal Haul_ConveyorLeft.glb"
-dest_files=["res://.godot/imported/Thermal Haul_ConveyorLeft.glb-063fdd011946fa08b30e3cce1543ae79.scn"]
+source_file="res://Models/Machines/Thermal Haul_Polisher.glb"
+dest_files=["res://.godot/imported/Thermal Haul_Polisher.glb-91d64fd088852ee4d7f7ce38be4ce6ef.scn"]
 
 [params]
 
