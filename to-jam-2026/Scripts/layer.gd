@@ -3,7 +3,7 @@ class_name Layer
 
 @export var dimensions: Vector2i = Vector2i(8, 8)
 
-var rotations: Array[Vector4] = [Vector4(1, 0, 0, 1), Vector4(0, 1, -1, 0), Vector4(-1, 0, 0, -1), Vector4(0, -1, 1, 0)]
+static var rotations: Array[Vector4] = [Vector4(1, 0, 0, 1), Vector4(0, 1, -1, 0), Vector4(-1, 0, 0, -1), Vector4(0, -1, 1, 0)]
 
 var machineNodes: Dictionary[Vector2i, Node3D] = {}
 var machineNames: Dictionary[Vector2i, PlaceableBar.MachineTypes] = {}

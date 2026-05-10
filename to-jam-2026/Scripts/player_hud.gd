@@ -57,7 +57,7 @@ func _on_click_signal(pos):
 		MusicManager.PlayGeneral(1)
 		if(placeableList[0].names[placingIndex] != PlaceableBar.MachineTypes.Belt):
 			ResetIsPlacing()
-	print("click")
+	#print("click")
 
 func SetGhostHolder() -> void:
 	ResetGhostHolder()
@@ -73,4 +73,4 @@ func RotateGhostHolder() -> void:
 
 func ResetGhostHolder() -> void:
 	if(ghostHolder.get_child_count() > 0):
-		ghostHolder.get_child(0).call_deferred("queue_free")
+		ghostHolder.get_child(0).queue_free()

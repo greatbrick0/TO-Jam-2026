@@ -19,7 +19,20 @@ func InitMachine(newPos: Vector2i) -> void:
 
 func _process(delta):
 	if(outputInventory.is_empty() and itemOutput != ItemTypes.Items.None and !isProcessing):
-		StartProcess()
+		if(HasEnoughResources()):
+			StartProcess()
+			ConsumeResources()
+
+func HasEnoughResources() -> bool:
+	for ii in itemRequirements:
+		if(inputInventory.count(ii) < itemRequirements[ii]):
+			return false
+	return true
+
+func ConsumeResources() -> void:
+	for ii in itemRequirements:
+		for jj in itemRequirements[ii]:
+			inputInventory.erase(ii)
 
 func StartProcess() -> void:
 	isProcessing = true

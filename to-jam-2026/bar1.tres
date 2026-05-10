@@ -1,13 +1,14 @@
-[gd_resource type="Resource" script_class="PlaceableBar" load_steps=5 format=3 uid="uid://dxrpt2lw1nw7l"]
+[gd_resource type="Resource" script_class="PlaceableBar" load_steps=6 format=3 uid="uid://dxrpt2lw1nw7l"]
 
 [ext_resource type="Script" uid="uid://bniy585gb4ry8" path="res://Scripts/placeable_bar.gd" id="1_ck482"]
 [ext_resource type="PackedScene" uid="uid://dk2oqbtnnqpx2" path="res://Scenes/Ghosts/GhostConveyor.tscn" id="1_s8m4l"]
-[ext_resource type="PackedScene" uid="uid://r4fcro0nqyw2" path="res://Scenes/Machines/conveyor.tscn" id="2_s8m4l"]
+[ext_resource type="PackedScene" uid="uid://d1gtrpm3n1mmq" path="res://Scenes/Ghosts/GhostDrill.tscn" id="2_vjrqc"]
+[ext_resource type="PackedScene" uid="uid://r4fcro0nqyw2" path="res://Scenes/Machines/conveyor.tscn" id="3_1022y"]
 [ext_resource type="PackedScene" uid="uid://dmlvh0f22f6ni" path="res://Scenes/Machines/miner_machine.tscn" id="3_vjrqc"]
 
 [resource]
 script = ExtResource("1_ck482")
-placeables = Array[PackedScene]([ExtResource("2_s8m4l"), ExtResource("3_vjrqc")])
-ghosts = Array[PackedScene]([ExtResource("1_s8m4l"), ExtResource("1_s8m4l")])
+placeables = Array[PackedScene]([ExtResource("3_1022y"), ExtResource("3_vjrqc")])
+ghosts = Array[PackedScene]([ExtResource("1_s8m4l"), ExtResource("2_vjrqc")])
 names = Array[int]([0, 1])
 metadata/_custom_type_script = "uid://bniy585gb4ry8"
