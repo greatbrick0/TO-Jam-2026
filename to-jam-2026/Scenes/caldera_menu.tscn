@@ -1,17 +1,25 @@
-[gd_scene load_steps=10 format=3 uid="uid://clh58gfv0fsu0"]
+[gd_scene load_steps=12 format=3 uid="uid://clh58gfv0fsu0"]
 
 [ext_resource type="ArrayMesh" uid="uid://ssbs4omwdect" path="res://Models/caldera.obj" id="1_7q1kq"]
+[ext_resource type="FontFile" uid="uid://dhyge03k5q3tt" path="res://Fonts/Quantico-Bold.ttf" id="1_skxbn"]
 [ext_resource type="Material" uid="uid://da7ahq1qgc7mx" path="res://Models/Materials/LiquidLavaMenu.tres" id="2_od2ib"]
 [ext_resource type="Texture2D" uid="uid://b4bol2exbr80w" path="res://Models/Materials/rock.png" id="3_skxbn"]
 [ext_resource type="Texture2D" uid="uid://cye1wrk8uqe3f" path="res://Models/Materials/rockBase.png" id="4_skxbn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_od2ib"]
 bg_color = Color(0.18359, 0.18359, 0.18359, 1)
+border_width_right = 10
 border_color = Color(1, 0.305882, 0, 1)
 
 [sub_resource type="Theme" id="Theme_od2ib"]
-Button/font_sizes/font_size = 24
+default_font = ExtResource("1_skxbn")
+Button/font_sizes/font_size = 56
 Button/styles/normal = SubResource("StyleBoxFlat_od2ib")
+
+[sub_resource type="LabelSettings" id="LabelSettings_1se2n"]
+font = ExtResource("1_skxbn")
+font_size = 70
+font_color = Color(1, 0.305882, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1se2n"]
 albedo_texture = ExtResource("3_skxbn")
@@ -80,6 +88,32 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control/Title"]
+layout_mode = 0
+offset_left = 746.0
+offset_top = 144.0
+offset_right = 1196.0
+offset_bottom = 210.0
+color = Color(0.18, 0.18, 0.18, 0.588235)
+
+[node name="Play" type="Button" parent="CanvasLayer/Control/Title"]
+layout_mode = 0
+offset_left = 992.0
+offset_top = 246.0
+offset_right = 1172.0
+offset_bottom = 336.0
+theme = SubResource("Theme_od2ib")
+text = "Play"
+
+[node name="Quit" type="Button" parent="CanvasLayer/Control/Title"]
+offset_left = 992.0
+offset_top = 353.885
+offset_right = 1172.0
+offset_bottom = 443.885
+theme = SubResource("Theme_od2ib")
+text = "Quit
+"
+
 [node name="Label" type="Label" parent="CanvasLayer/Control/Title"]
 layout_mode = 1
 anchors_preset = 8
@@ -87,24 +121,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 167.0
-offset_top = -237.0
-offset_right = 493.0
-offset_bottom = -168.0
+offset_left = 108.5
+offset_top = -234.0
+offset_right = 551.5
+offset_bottom = -133.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 0.304688, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "Thermal Haul"
-
-[node name="Play" type="Button" parent="CanvasLayer/Control/Title"]
-layout_mode = 0
-offset_left = 943.0
-offset_top = 218.0
-offset_right = 1013.0
-offset_bottom = 268.0
-theme = SubResource("Theme_od2ib")
-text = "Play"
+label_settings = SubResource("LabelSettings_1se2n")
 
 [node name="Node3D" type="Node3D" parent="."]
 
