@@ -85,6 +85,8 @@ func SlotOpened(degree: int, acceptedItems: Array[ItemTypes.Items] = []) -> bool
 			return false
 
 func MoveItem() -> void:
+	if($Anim.is_playing()):
+		return
 	if(outputToTile != null):
 		$Anim.play("Move")
 		if(extrasNames.is_empty()):
