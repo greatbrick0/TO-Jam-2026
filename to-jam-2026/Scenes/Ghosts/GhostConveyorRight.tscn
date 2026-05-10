@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://023qy3b8bra8"]
+
+[ext_resource type="PackedScene" uid="uid://doffetnyn2mby" path="res://Models/Machines/Thermal Haul_ConveyorRight.glb" id="1_hisxg"]
+[ext_resource type="Shader" uid="uid://2heunextgh86" path="res://Models/Materials/Shaderzx/FresnelEffect.gdshader" id="2_idsev"]
+[ext_resource type="Texture2D" uid="uid://ba7lrlktjbuiy" path="res://Models/Machines/Thermal Haul_ConveyorRight_Swatch1.png" id="3_08ivw"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_clwb4"]
+render_priority = 0
+shader = ExtResource("2_idsev")
+shader_parameter/texture_albedo = ExtResource("3_08ivw")
+shader_parameter/fresnelStrength = 1.09
+shader_parameter/fresnelColor = Vector4(-0.06, 0.62, 0.44, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a8ufe"]
+render_priority = 0
+shader = ExtResource("2_idsev")
+shader_parameter/texture_albedo = ExtResource("3_08ivw")
+shader_parameter/fresnelStrength = 1.09
+shader_parameter/fresnelColor = Vector4(-0.06, 0.62, 0.44, 0)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Thermal Haul_ConveyorRight" parent="." instance=ExtResource("1_hisxg")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="ConveyorBeltRight" parent="Thermal Haul_ConveyorRight" index="0"]
+surface_material_override/0 = SubResource("ShaderMaterial_clwb4")
+surface_material_override/1 = SubResource("ShaderMaterial_a8ufe")
+
+[editable path="Thermal Haul_ConveyorRight"]

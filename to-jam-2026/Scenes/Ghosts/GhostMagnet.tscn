@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://bxo07f4h5d1ka"]
+
+[ext_resource type="PackedScene" uid="uid://c8ot0g3057p2t" path="res://Models/Machines/Thermal Haul_Magnet.glb" id="1_eiyqe"]
+[ext_resource type="Shader" uid="uid://2heunextgh86" path="res://Models/Materials/Shaderzx/FresnelEffect.gdshader" id="2_0isb0"]
+[ext_resource type="Texture2D" uid="uid://ba7lrlktjbuiy" path="res://Models/Machines/Thermal Haul_ConveyorRight_Swatch1.png" id="3_q8qeo"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8oliw"]
+render_priority = 0
+shader = ExtResource("2_0isb0")
+shader_parameter/texture_albedo = ExtResource("3_q8qeo")
+shader_parameter/fresnelStrength = 1.09
+shader_parameter/fresnelColor = Vector4(-0.06, 0.62, 0.44, 0)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Thermal Haul_Magnet" parent="." instance=ExtResource("1_eiyqe")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="Magnet" parent="Thermal Haul_Magnet" index="0"]
+surface_material_override/0 = SubResource("ShaderMaterial_8oliw")
+
+[editable path="Thermal Haul_Magnet"]

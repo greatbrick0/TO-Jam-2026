@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://bja2hivqwarl4"]
+
+[ext_resource type="PackedScene" uid="uid://buh7tlvbhx8ly" path="res://Models/Machines/Thermal Haul_Polisher.glb" id="1_v3nfe"]
+[ext_resource type="Shader" uid="uid://2heunextgh86" path="res://Models/Materials/Shaderzx/FresnelEffect.gdshader" id="2_getsq"]
+[ext_resource type="Texture2D" uid="uid://ba7lrlktjbuiy" path="res://Models/Machines/Thermal Haul_ConveyorRight_Swatch1.png" id="3_s2jd2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_akbwe"]
+render_priority = 0
+shader = ExtResource("2_getsq")
+shader_parameter/texture_albedo = ExtResource("3_s2jd2")
+shader_parameter/fresnelStrength = 1.09
+shader_parameter/fresnelColor = Vector4(-0.06, 0.62, 0.44, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r6oi8"]
+render_priority = 0
+shader = ExtResource("2_getsq")
+shader_parameter/texture_albedo = ExtResource("3_s2jd2")
+shader_parameter/fresnelStrength = 1.09
+shader_parameter/fresnelColor = Vector4(-0.06, 0.62, 0.44, 0)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Thermal Haul_Polisher" parent="." instance=ExtResource("1_v3nfe")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="Polisher" parent="Thermal Haul_Polisher" index="0"]
+surface_material_override/0 = SubResource("ShaderMaterial_akbwe")
+surface_material_override/1 = SubResource("ShaderMaterial_r6oi8")
+
+[editable path="Thermal Haul_Polisher"]
