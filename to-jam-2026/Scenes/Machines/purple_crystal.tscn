@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://gxmhtr8nxpl3"]
+
+[ext_resource type="PackedScene" uid="uid://bhw1ggv063vvf" path="res://Scenes/machine.tscn" id="1_kg7en"]
+[ext_resource type="PackedScene" uid="uid://h5ewlnduhtv1" path="res://Models/Machines/GemDeposit3.glb" id="2_aqfgp"]
+
+[node name="PurpleCrystal" instance=ExtResource("1_kg7en")]
+
+[node name="MeshInstance3D" parent="Visuals" index="0"]
+visible = false
+
+[node name="GemDeposit3" parent="Visuals" index="1" instance=ExtResource("2_aqfgp")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)

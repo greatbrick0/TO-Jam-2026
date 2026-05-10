@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://4c6p7308hx2l"]
+[gd_scene load_steps=13 format=3 uid="uid://4c6p7308hx2l"]
 
 [ext_resource type="PackedScene" uid="uid://c82v0dghefi5u" path="res://Scenes/layer.tscn" id="1_5erdv"]
 [ext_resource type="Script" uid="uid://cb0c6011fgaiy" path="res://Scripts/layer_manager.gd" id="1_a2ia3"]
@@ -8,10 +8,10 @@
 [ext_resource type="Script" uid="uid://cvnakuciut7lc" path="res://Scripts/lava_generator.gd" id="4_ha3dl"]
 [ext_resource type="PackedScene" uid="uid://cqsp81s2jtwse" path="res://Scenes/player_hud.tscn" id="4_qbrl8"]
 [ext_resource type="PackedScene" uid="uid://xstedqn8yyao" path="res://Scenes/Machines/lava.tscn" id="4_tqiex"]
+[ext_resource type="Script" uid="uid://c45h36nk5jee3" path="res://Scripts/tile_adder.gd" id="6_f3gli"]
+[ext_resource type="PackedScene" uid="uid://gxmhtr8nxpl3" path="res://Scenes/Machines/purple_crystal.tscn" id="7_2jcip"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_ikcpc"]
-
-[sub_resource type="PrismMesh" id="PrismMesh_5erdv"]
 
 [sub_resource type="Environment" id="Environment_a2ia3"]
 ambient_light_color = Color(1, 1, 1, 1)
@@ -33,6 +33,14 @@ bounds = Vector2i(6, 6)
 [node name="Layer1" parent="LayerManager" instance=ExtResource("1_5erdv")]
 dimensions = Vector2i(6, 6)
 
+[node name="TileAdder" type="Node3D" parent="LayerManager/Layer1"]
+script = ExtResource("6_f3gli")
+addedTiles = Dictionary[Vector2i, Array]({
+Vector2i(-3, 0): [ExtResource("7_2jcip"), 0, 4],
+Vector2i(2, -1): [ExtResource("7_2jcip"), 0, 4]
+})
+metadata/_custom_type_script = "uid://c45h36nk5jee3"
+
 [node name="Layer2" parent="LayerManager" instance=ExtResource("1_5erdv")]
 
 [node name="CameraHolder" type="Node3D" parent="."]
@@ -51,9 +59,6 @@ script = ExtResource("1_q2fht")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ClickPlane"]
 shape = SubResource("WorldBoundaryShape3D_ikcpc")
-
-[node name="FunTriangle" type="MeshInstance3D" parent="."]
-mesh = SubResource("PrismMesh_5erdv")
 
 [node name="PlayerHud" parent="." node_paths=PackedStringArray("layerManager") instance=ExtResource("4_qbrl8")]
 layerManager = NodePath("../LayerManager")

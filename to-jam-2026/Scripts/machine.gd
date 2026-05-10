@@ -7,3 +7,9 @@ class_name Machine
 @export var itemRequirements: Dictionary[ItemTypes.Items, int]
 var outputInventory: Array[ItemTypes.Items] = []
 var inputInventory: Array[ItemTypes.Items] = []
+
+var layerRef: Layer
+var machinePos: Vector2i
+
+func InitMachine(newPos: Vector2i) -> void:
+	machinePos = newPos

@@ -13,7 +13,7 @@ config_version=5
 config/name="to-jam-2026"
 run/main_scene="uid://clh58gfv0fsu0"
 config/features=PackedStringArray("4.4", "GL Compatibility")
-config/icon="res://Images/icon.svg"
+config/icon="uid://c13qb1ynt0iwg"
 
 [autoload]
 
@@ -33,6 +33,7 @@ folder_colors={
 "res://Models/": "yellow",
 "res://Music Manager/": "pink",
 "res://Scenes/": "blue",
+"res://Scenes/Ghosts/": "teal",
 "res://Scenes/Machines/": "gray",
 "res://Scripts/": "green",
 "res://Scripts/Machines/": "gray",

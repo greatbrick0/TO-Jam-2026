@@ -6,6 +6,8 @@ enum MachineTypes {
 	Drill,
 	Polisher,
 	Lava,
+	PurpleCrystal,
+	GreenCrystal,
 }
 
 @export var placeables: Array[PackedScene]

@@ -9,9 +9,9 @@ var machineNodes: Dictionary[Vector2i, Node3D] = {}
 var machineNames: Dictionary[Vector2i, PlaceableBar.MachineTypes] = {}
 
 func CanPlaceObject(newPos: Vector2i, rotInt: int, machineName: PlaceableBar.MachineTypes) -> bool:
-	if(newPos.x > dimensions.x / 2 or newPos.x < -dimensions.x / 2):
+	if(newPos.x > (dimensions.x - 1) / 2 or newPos.x < -dimensions.x / 2):
 		return false
-	elif(newPos.y > dimensions.y / 2 or newPos.y < -dimensions.y / 2):
+	elif(newPos.y > (dimensions.y - 1) / 2 or newPos.y < -dimensions.y / 2):
 		return false
 	
 	if(machineNodes.has(newPos)):
@@ -28,11 +28,20 @@ func PlaceObject(obj: PackedScene, newPos: Vector2i, rotInt: int, machineName: P
 	if(machineName == PlaceableBar.MachineTypes.Belt):
 		PlaceConveyor(ref, rotInt)
 	else:
-		PlaceMachine(ref, rotInt)
+		ref.layerRef = self
+		PlaceMachine(ref, newPos, rotInt)
 
 func PlaceConveyor(obj: Conveyor, rotInt: int) -> void:
 	obj.rotate(Vector3.UP, rotInt * PI/2)
-	
 
-func PlaceMachine(obj: Machine, rotInt: int) -> void:
+func PlaceMachine(obj: Machine, newPos: Vector2i, rotInt: int) -> void:
 	obj.rotate(Vector3.UP, rotInt * PI/2)
+	for ii in range(len(obj.inputDirections)):
+		var dir: Vector2i = obj.inputDirections[ii]
+		obj.inputDirections[ii].x = (dir.x * rotations[rotInt].x) + (dir.x * rotations[rotInt].y) 
+		obj.inputDirections[ii].y = (dir.y * rotations[rotInt].z) + (dir.y * rotations[rotInt].w) 
+	for ii in range(len(obj.outputDirections)):
+		var dir: Vector2i = obj.outputDirections[ii]
+		obj.outputDirections[ii].x = (dir.x * rotations[rotInt].x) + (dir.x * rotations[rotInt].y) 
+		obj.outputDirections[ii].y = (dir.y * rotations[rotInt].z) + (dir.y * rotations[rotInt].w)
+	obj.InitMachine(newPos)
