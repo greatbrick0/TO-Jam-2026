@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dtusiiaqjyn8t" path="res://Music Manager/music_manager.gd" id="1_abjkx"]
 [ext_resource type="AudioStream" uid="uid://djwm0krrqab8o" path="res://Sounds/error1.wav" id="1_l6w6c"]
-[ext_resource type="AudioStream" uid="uid://vg764qssjl7x" path="res://Sounds/process1.wav" id="2_abjkx"]
+[ext_resource type="AudioStream" uid="uid://c5u6e827mi0jk" path="res://Music Manager/sound1.wav" id="3_abjkx"]
 
 [sub_resource type="AudioStreamGenerator" id="AudioStreamGenerator_a0g8o"]
 mix_rate_mode = 0
@@ -30,16 +30,5 @@ stream = ExtResource("1_l6w6c")
 volume_db = -10.0
 
 [node name="MenuBlip2" type="AudioStreamPlayer" parent="GeneralEffects"]
-stream = ExtResource("2_abjkx")
+stream = ExtResource("3_abjkx")
 volume_db = -10.0
-
-[node name="MenuBlip3" type="AudioStreamPlayer" parent="GeneralEffects"]
-volume_db = -10.0
-
-[node name="MenuBlip4" type="AudioStreamPlayer" parent="GeneralEffects"]
-volume_db = -10.0
-pitch_scale = 1.5
-
-[node name="RobotPlace1" type="AudioStreamPlayer" parent="GeneralEffects"]
-volume_db = -20.0
-pitch_scale = 1.5

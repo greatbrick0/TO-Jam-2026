@@ -3,6 +3,7 @@ extends Node
 @export var gameplayScene: PackedScene
 
 func PlayStartAnimation() -> void:
+	MusicManager.PlayGeneral(1)
 	$StartAnimator.play("Start")
 
 func TransitionToGameplayScene() -> void:
