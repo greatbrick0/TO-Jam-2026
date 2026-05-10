@@ -3,10 +3,10 @@ extends TileAdder
 @export var lavaScene: PackedScene
 @export var bounds: Vector2i
 
-func _ready():
+func Initialize() -> void:
 	GenerateLava()
-	call_deferred("AddTiles")
-	queue_free()
+	AddTiles()
+	call_deferred("queue_free")
 
 func GenerateLava() -> void:
 	for ii in bounds.x:

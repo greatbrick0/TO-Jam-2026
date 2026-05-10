@@ -8,6 +8,11 @@ var rotations: Array[Vector4] = [Vector4(1, 0, 1, 0), Vector4(0, -1, 0, 1), Vect
 var machineNodes: Dictionary[Vector2i, Node3D] = {}
 var machineNames: Dictionary[Vector2i, PlaceableBar.MachineTypes] = {}
 
+func _ready() -> void:
+	for ii in get_children():
+		if(ii is TileAdder):
+			ii.Initialize()
+
 func CanPlaceObject(newPos: Vector2i, rotInt: int, machineName: PlaceableBar.MachineTypes) -> bool:
 	if(newPos.x > (dimensions.x - 1) / 2 or newPos.x < -dimensions.x / 2):
 		return false

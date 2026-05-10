@@ -3,9 +3,9 @@ class_name TileAdder
 
 @export var addedTiles: Dictionary[Vector2i, Array]
 
-func _ready():
-	call_deferred("AddTiles")
-	queue_free()
+func Initialize() -> void:
+	AddTiles()
+	call_deferred("queue_free")
 
 func AddTiles() -> void:
 	var layer: Layer = get_parent()
