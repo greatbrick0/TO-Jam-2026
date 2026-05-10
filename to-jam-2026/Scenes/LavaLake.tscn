@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dv7f04l0f743s"]
 
-[ext_resource type="Material" uid="uid://c88gyrier8wwg" path="res://Models/Materials/LiquidLava2.tres" id="1_xlm5j"]
+[ext_resource type="Material" uid="uid://bqsovchy5jadk" path="res://Models/Materials/LiquidLava2.tres" id="1_xlm5j"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ru6mi"]
 subdivide_width = 32

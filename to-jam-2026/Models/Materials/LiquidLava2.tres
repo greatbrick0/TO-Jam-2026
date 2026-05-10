@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://bqsovchy5jadk"]
 
-[ext_resource type="Shader" path="res://Models/Materials/Shaderzx/LiquidLava.gdshader" id="1_5b31w"]
+[ext_resource type="Shader" uid="uid://baq7t2v47rsc8" path="res://Models/Materials/Shaderzx/LiquidLava.gdshader" id="1_5b31w"]
 
 [sub_resource type="Gradient" id="Gradient_5b31w"]
 offsets = PackedFloat32Array(0.0502513, 0.0678392, 0.173367, 0.193467, 0.281407, 0.291457, 0.462312, 0.469849, 0.713568, 0.731156)
@@ -12,9 +12,9 @@ gradient = SubResource("Gradient_5b31w")
 [resource]
 render_priority = 0
 shader = ExtResource("1_5b31w")
-shader_parameter/waveStrength = 0.22
-shader_parameter/noiseScale = -2.07
+shader_parameter/waveStrength = 0.8
+shader_parameter/noiseScale = 1.0
 shader_parameter/tileSpeed = Vector2(0.4, 0.7)
-shader_parameter/noiseScaleMult = 10.715
-shader_parameter/tileSpeedMultiply = Vector2(0.3, 0.7)
+shader_parameter/noiseScaleMult = 3.0
+shader_parameter/tileSpeedMultiply = Vector2(0.6, 0.7)
 shader_parameter/gradient = SubResource("GradientTexture1D_028km")
