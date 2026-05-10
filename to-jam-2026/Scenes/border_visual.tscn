@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://be2l4l3sqdjc2"]
+
+[ext_resource type="Script" uid="uid://c247wesj61cfo" path="res://Scripts/border_visual.gd" id="1_o8psv"]
+[ext_resource type="Material" uid="uid://cmdxjbcp7l7xi" path="res://Models/Materials/WhiteMat.tres" id="2_7ybvx"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_8lwej"]
+size = Vector2(1, 0.1)
+center_offset = Vector3(0, 0, 0.05)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_k4bhx"]
+size = Vector2(1, 0.1)
+center_offset = Vector3(0, 0, -0.05)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_d6gih"]
+size = Vector2(0.1, 1)
+center_offset = Vector3(-0.05, 0, 0)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_i63gd"]
+size = Vector2(0.1, 1)
+center_offset = Vector3(0.05, 0, 0)
+
+[node name="BorderVisual" type="Node3D"]
+script = ExtResource("1_o8psv")
+
+[node name="Up" type="MeshInstance3D" parent="."]
+material_override = ExtResource("2_7ybvx")
+mesh = SubResource("PlaneMesh_8lwej")
+
+[node name="Down" type="MeshInstance3D" parent="."]
+material_override = ExtResource("2_7ybvx")
+mesh = SubResource("PlaneMesh_k4bhx")
+
+[node name="Left" type="MeshInstance3D" parent="."]
+material_override = ExtResource("2_7ybvx")
+mesh = SubResource("PlaneMesh_d6gih")
+
+[node name="Right" type="MeshInstance3D" parent="."]
+material_override = ExtResource("2_7ybvx")
+mesh = SubResource("PlaneMesh_i63gd")

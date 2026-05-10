@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://4c6p7308hx2l"]
+[gd_scene load_steps=14 format=3 uid="uid://4c6p7308hx2l"]
 
 [ext_resource type="PackedScene" uid="uid://c82v0dghefi5u" path="res://Scenes/layer.tscn" id="1_5erdv"]
 [ext_resource type="Script" uid="uid://cb0c6011fgaiy" path="res://Scripts/layer_manager.gd" id="1_a2ia3"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://xstedqn8yyao" path="res://Scenes/Machines/lava.tscn" id="4_tqiex"]
 [ext_resource type="Script" uid="uid://c45h36nk5jee3" path="res://Scripts/tile_adder.gd" id="6_f3gli"]
 [ext_resource type="PackedScene" uid="uid://gxmhtr8nxpl3" path="res://Scenes/Machines/purple_crystal.tscn" id="7_2jcip"]
+[ext_resource type="PackedScene" uid="uid://be2l4l3sqdjc2" path="res://Scenes/border_visual.tscn" id="11_2jcip"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_ikcpc"]
 
@@ -18,8 +19,9 @@ ambient_light_color = Color(1, 1, 1, 1)
 
 [node name="MainLevel" type="Node3D"]
 
-[node name="LayerManager" type="Node3D" parent="." node_paths=PackedStringArray("layers")]
+[node name="LayerManager" type="Node3D" parent="." node_paths=PackedStringArray("borderVisual", "layers")]
 script = ExtResource("1_a2ia3")
+borderVisual = NodePath("../BorderVisual")
 layers = [NodePath("Layer0"), NodePath("Layer1")]
 
 [node name="Layer0" parent="LayerManager" instance=ExtResource("1_5erdv")]
@@ -68,6 +70,9 @@ environment = SubResource("Environment_a2ia3")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.653196, 0.473386, -0.590966, 0, 0.780474, 0.625188, 0.757189, -0.40837, 0.509803, 0, 0, 0)
+
+[node name="BorderVisual" parent="." instance=ExtResource("11_2jcip")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -0.5)
 
 [connection signal="click_signal" from="ClickPlane" to="PlayerHud" method="_on_click_signal"]
 [connection signal="hover_signal" from="ClickPlane" to="PlayerHud" method="_on_hover_signal"]

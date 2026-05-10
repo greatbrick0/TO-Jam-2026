@@ -1,9 +1,10 @@
 extends Node3D
 class_name LayerManager
 
+@export var borderVisual: BorderVisual
 @export var layers: Array[Layer] = []
 var activeLayerIndex: int = 1
-var highestKnownLayer: int = 1
+@export var highestKnownLayer: int = 1
 
 func _ready() -> void:
 	for ii in get_children():
@@ -16,6 +17,8 @@ func SetActiveLayer(newLayerIndex: int) -> void:
 		return
 	activeLayerIndex = newLayerIndex
 	print(activeLayerIndex)
+	if(!(layers[activeLayerIndex].dimensions.x == 0 or layers[activeLayerIndex].dimensions.y == 0)):
+		borderVisual.SetBorders(layers[activeLayerIndex].dimensions)
 	for ii in range(len(layers)):
 		layers[ii].visible = (ii <= activeLayerIndex)
 		layers[ii].position.y = (ii - activeLayerIndex)
