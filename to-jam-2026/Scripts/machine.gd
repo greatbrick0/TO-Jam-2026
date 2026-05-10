@@ -25,7 +25,7 @@ func InitMachine(newPos: Vector2i) -> void:
 
 func _process(delta):
 	if(itemRef != null):
-		$TransferPoint.global_position = lerp(Conveyor.ConvertVector2iToSpace(Vector2i.ZERO), Conveyor.ConvertVector2iToSpace(outputDirection), transferProgress) + global_position
+		$TransferPoint.global_position = lerp(Vector3.ZERO, Conveyor.ConvertVector2iToSpace(outputDirection), transferProgress) + global_position
 		itemRef.global_position = $TransferPoint.global_position
 	if(outputInventory.is_empty() and itemOutput != ItemTypes.Items.None and !isProcessing):
 		if(HasEnoughResources()):
@@ -36,6 +36,14 @@ func _process(delta):
 			if(layerRef.machineNames.has(machinePos + ii)):
 				if(layerRef.machineNames[machinePos + ii] == PlaceableBar.MachineTypes.Belt):
 					layerRef.machineNodes[machinePos + ii].SlotOpened(GetRequiredResources())
+	if(!outputInventory.is_empty()):
+		if(layerRef.machineNodes.has(machinePos + outputDirection)):
+			if(!$Anim.is_playing() and layerRef.machineNodes[machinePos + outputDirection] is Conveyor):
+				if(layerRef.machineNodes[machinePos + outputDirection].slotItemName == ItemTypes.Items.None):
+					MoveItem()
+
+func ClickAction() -> void:
+	pass
 
 func HasEnoughResources() -> bool:
 	for ii in itemRequirements:
@@ -62,9 +70,8 @@ func StartProcess() -> void:
 func FinishProcess() -> void:
 	isProcessing = false
 	outputInventory.append(itemOutput)
-	print("finished!" + str(itemOutput))
 
-func SlotOpened(acceptedItems: Array[ItemTypes.Items] = []) -> bool:
+func SlotOpened(degree: int, acceptedItems: Array[ItemTypes.Items] = []) -> bool:
 	if(outputInventory.is_empty()):
 		return false
 	else:
@@ -82,4 +89,6 @@ func FinishMoving(animName: StringName = "Move") -> void:
 	itemRef.reparent(conveyor)
 	conveyor.slot = itemRef
 	conveyor.slotItemName = transferItem
+	conveyor.itemRef = itemRef
 	transferItem = ItemTypes.Items.None
+	itemRef = null

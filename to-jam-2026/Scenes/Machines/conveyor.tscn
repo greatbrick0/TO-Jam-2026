@@ -1,9 +1,46 @@
-[gd_scene load_steps=5 format=3 uid="uid://r4fcro0nqyw2"]
+[gd_scene load_steps=8 format=3 uid="uid://r4fcro0nqyw2"]
 
-[ext_resource type="Script" uid="uid://b768b4k174w5c" path="res://Scripts/coveyor.gd" id="1_oaw0s"]
+[ext_resource type="Script" uid="uid://b768b4k174w5c" path="res://Scripts/conveyor.gd" id="1_oaw0s"]
 [ext_resource type="PackedScene" uid="uid://di3gytn8l16kg" path="res://Models/Machines/Thermal Haul_ConveyorStraight.glb" id="2_7xngv"]
 [ext_resource type="PackedScene" uid="uid://doffetnyn2mby" path="res://Models/Machines/Thermal Haul_ConveyorRight.glb" id="3_32ytb"]
 [ext_resource type="PackedScene" uid="uid://bikgxrtpkln2u" path="res://Models/Machines/Thermal Haul_ConveyorLeft.glb" id="4_1wyg4"]
+
+[sub_resource type="Animation" id="Animation_oaw0s"]
+resource_name = "Move"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:transferProgress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_7xngv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:transferProgress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7xngv"]
+_data = {
+&"Move": SubResource("Animation_oaw0s"),
+&"RESET": SubResource("Animation_7xngv")
+}
 
 [node name="Conveyor" type="Node3D"]
 script = ExtResource("1_oaw0s")
@@ -20,3 +57,10 @@ transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, 
 [node name="Right" parent="Visuals" instance=ExtResource("4_1wyg4")]
 transform = Transform3D(-2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, 0, 0, 0)
 visible = false
+
+[node name="TransferPoint" type="Marker3D" parent="."]
+
+[node name="Anim" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_7xngv")
+}

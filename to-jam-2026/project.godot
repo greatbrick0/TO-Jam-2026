@@ -36,6 +36,7 @@ folder_colors={
 "res://Music Manager/": "pink",
 "res://Scenes/": "blue",
 "res://Scenes/Ghosts/": "teal",
+"res://Scenes/Items/": "yellow",
 "res://Scenes/Machines/": "gray",
 "res://Scripts/": "green",
 "res://Scripts/Machines/": "gray",

@@ -28,3 +28,7 @@ func CanPlaceObject(newPos: Vector2i, rotInt: int, machineName: PlaceableBar.Mac
 
 func PlaceObject(obj: PackedScene, newPos: Vector2i, rotInt: int, machineName: PlaceableBar.MachineTypes) -> void:
 	layers[activeLayerIndex].PlaceObject(obj, newPos, rotInt, machineName)
+
+func ClickAction(newPos: Vector2i) -> void:
+	if(layers[activeLayerIndex].machineNodes.has(newPos)):
+		layers[activeLayerIndex].machineNodes[newPos].ClickAction()
