@@ -1,8 +1,45 @@
-[gd_scene load_steps=3 format=3 uid="uid://bhw1ggv063vvf"]
+[gd_scene load_steps=6 format=3 uid="uid://bhw1ggv063vvf"]
 
 [ext_resource type="Script" uid="uid://dcrql415mlaig" path="res://Scripts/machine.gd" id="1_xuuum"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_7aq5r"]
+
+[sub_resource type="Animation" id="Animation_xuuum"]
+resource_name = "Move"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:transferProgress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_h612m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:transferProgress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h612m"]
+_data = {
+&"Move": SubResource("Animation_xuuum"),
+&"RESET": SubResource("Animation_h612m")
+}
 
 [node name="Machine" type="Node3D"]
 script = ExtResource("1_xuuum")
@@ -14,5 +51,12 @@ mesh = SubResource("BoxMesh_7aq5r")
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
+
+[node name="TransferPoint" type="Marker3D" parent="."]
+
+[node name="Anim" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_h612m")
+}
 
 [connection signal="timeout" from="Timer" to="." method="FinishProcess"]

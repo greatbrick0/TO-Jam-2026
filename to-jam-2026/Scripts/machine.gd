@@ -1,7 +1,7 @@
 extends Node3D
 class_name Machine
 
-@export var outputDirections: Array[Vector2i]
+@export var outputDirection: Vector2i
 @export var inputDirections: Array[Vector2i]
 
 @export var dropWaste: bool = false
@@ -13,11 +13,20 @@ var isProcessing: bool = false
 
 var layerRef: Layer
 var machinePos: Vector2i
+var itemRef: Node3D 
+@export var transferProgress: float = 0.0
+var transferItem: ItemTypes.Items = ItemTypes.Items.None
+
+func _ready():
+	$Anim.animation_finished.connect(FinishMoving)
 
 func InitMachine(newPos: Vector2i) -> void:
 	machinePos = newPos
 
 func _process(delta):
+	if(itemRef != null):
+		$TransferPoint.global_position = lerp(Conveyor.ConvertVector2iToSpace(Vector2i.ZERO), Conveyor.ConvertVector2iToSpace(outputDirection), transferProgress) + global_position
+		itemRef.global_position = $TransferPoint.global_position
 	if(outputInventory.is_empty() and itemOutput != ItemTypes.Items.None and !isProcessing):
 		if(HasEnoughResources()):
 			StartProcess()
@@ -49,12 +58,11 @@ func ConsumeResources() -> void:
 func StartProcess() -> void:
 	isProcessing = true
 	$Timer.start()
-	print("processing...")
 
 func FinishProcess() -> void:
 	isProcessing = false
 	outputInventory.append(itemOutput)
-	print("finished!")
+	print("finished!" + str(itemOutput))
 
 func SlotOpened(acceptedItems: Array[ItemTypes.Items] = []) -> bool:
 	if(outputInventory.is_empty()):
@@ -64,5 +72,14 @@ func SlotOpened(acceptedItems: Array[ItemTypes.Items] = []) -> bool:
 		return true
 
 func MoveItem() -> void:
-	var ref: Node3D = ItemTypes.itemScenes[outputInventory.pop_front()].instantiate()
-	add_child(ref)
+	$Anim.play("Move")
+	transferItem = outputInventory.pop_front()
+	itemRef = ItemTypes.itemScenes[transferItem].instantiate()
+	add_child(itemRef)
+
+func FinishMoving(animName: StringName = "Move") -> void:
+	var conveyor: Conveyor = layerRef.machineNodes[machinePos + outputDirection]
+	itemRef.reparent(conveyor)
+	conveyor.slot = itemRef
+	conveyor.slotItemName = transferItem
+	transferItem = ItemTypes.Items.None

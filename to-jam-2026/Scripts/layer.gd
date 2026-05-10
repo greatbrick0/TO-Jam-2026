@@ -62,8 +62,7 @@ func PlaceMachine(obj: Machine, newPos: Vector2i, rotInt: int) -> void:
 	obj.rotate(Vector3.UP, rotInt * PI/2)
 	for ii in range(len(obj.inputDirections)):
 		obj.inputDirections[ii] = RotateVector2i(obj.inputDirections[ii], rotInt)
-	for ii in range(len(obj.outputDirections)):
-		obj.outputDirections[ii] = RotateVector2i(obj.outputDirections[ii], rotInt)
+	obj.outputDirection = RotateVector2i(obj.outputDirection, rotInt)
 	obj.InitMachine(newPos)
 
 static func RotateVector2i(oldVec: Vector2i, amount: int) -> Vector2i:

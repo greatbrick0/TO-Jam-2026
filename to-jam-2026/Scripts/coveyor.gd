@@ -47,10 +47,10 @@ func DoesInputToMe(pos: Vector2i, myPos: Vector2i, layer: Layer) -> bool:
 			else:
 				return false
 		else:
-			for ii in layer.machineNodes[pos].outputDirections:
-				if(ii + pos == myPos):
-					return true
-			return false
+			if(layer.machineNodes[pos].outputDirection + pos == myPos):
+				return true
+			else:
+				return false
 	else:
 		return false
 
@@ -75,6 +75,11 @@ func MoveItem() -> void:
 		slotItemName = extrasNames.pop_front()
 
 func PropagateOpen() -> void:
+	if(inputFromTiles.is_empty()):
+		return
 	inputFromTiles[inputTileIndex].SlotOpened()
 	inputTileIndex += 1
 	inputTileIndex %= len(inputFromTiles)
+
+static func ConvertVector2iToSpace(oldVec: Vector2i) -> Vector3:
+	return Vector3(oldVec.x, 0, oldVec.y)

@@ -6,7 +6,7 @@
 
 [node name="MinerMachine" instance=ExtResource("1_ga72t")]
 script = ExtResource("2_lruuj")
-outputDirections = Array[Vector2i]([Vector2i(0, 1)])
+outputDirection = Vector2i(0, 1)
 
 [node name="MeshInstance3D" parent="Visuals" index="0"]
 visible = false

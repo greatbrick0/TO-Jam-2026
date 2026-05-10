@@ -22,7 +22,6 @@ func _process(delta):
 			placingIndex = ii - 1
 			SetGhostHolder()
 			MoveGhostHolder(hoveredTile)
-			print(ii)
 	
 	if(Input.is_action_just_pressed("ui_up")):
 		layerManager.SetActiveLayer(layerManager.activeLayerIndex + 1)

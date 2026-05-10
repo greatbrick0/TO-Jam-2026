@@ -16,7 +16,7 @@ func SetActiveLayer(newLayerIndex: int) -> void:
 	if(newLayerIndex < 0 or newLayerIndex > highestKnownLayer):
 		return
 	activeLayerIndex = newLayerIndex
-	print(activeLayerIndex)
+	print("layer " + str(activeLayerIndex))
 	if(!(layers[activeLayerIndex].dimensions.x == 0 or layers[activeLayerIndex].dimensions.y == 0)):
 		borderVisual.SetBorders(layers[activeLayerIndex].dimensions)
 	for ii in range(len(layers)):
