@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://cn25kl6ueid5s"]
+
+[ext_resource type="Shader" uid="uid://2heunextgh86" path="res://Models/Materials/Shaderzx/FresnelEffect.gdshader" id="1_p7lrj"]
+[ext_resource type="Texture2D" uid="uid://ba7lrlktjbuiy" path="res://Models/Machines/Thermal Haul_ConveyorRight_Swatch1.png" id="2_bhdki"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_p7lrj")
+shader_parameter/texture_albedo = ExtResource("2_bhdki")
+shader_parameter/fresnelStrength = 1.09
+shader_parameter/fresnelColor = Vector4(-0.06, 0.62, 0.44, 0)
