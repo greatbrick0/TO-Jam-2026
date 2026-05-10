@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bk40prxj8a3r7"]
+[gd_scene load_steps=6 format=3 uid="uid://bk40prxj8a3r7"]
 
 [ext_resource type="Script" uid="uid://dtusiiaqjyn8t" path="res://Music Manager/music_manager.gd" id="1_abjkx"]
 [ext_resource type="AudioStream" uid="uid://djwm0krrqab8o" path="res://Sounds/error1.wav" id="1_l6w6c"]
+[ext_resource type="AudioStream" uid="uid://d0v76jx3jejjh" path="res://Music Manager/Thermal Hauling.wav" id="2_l7oxi"]
 [ext_resource type="AudioStream" uid="uid://c5u6e827mi0jk" path="res://Music Manager/sound1.wav" id="3_abjkx"]
 
 [sub_resource type="AudioStreamGenerator" id="AudioStreamGenerator_a0g8o"]
@@ -18,9 +19,9 @@ volume_db = -50.0
 autoplay = true
 
 [node name="Track1" type="AudioStreamPlayer" parent="."]
-volume_db = -50.0
 
 [node name="Track2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_l7oxi")
 volume_db = -50.0
 
 [node name="GeneralEffects" type="Node" parent="."]

@@ -4,6 +4,7 @@ class_name LayerManager
 @export var borderVisual: BorderVisual
 @export var layers: Array[Layer] = []
 var activeLayerIndex: int = 1
+var placedFirstItemFlag: bool = false;
 @export var highestKnownLayer: int = 1
 
 func _ready() -> void:
@@ -28,6 +29,10 @@ func CanPlaceObject(newPos: Vector2i, rotInt: int, machineName: PlaceableBar.Mac
 
 func PlaceObject(obj: PackedScene, newPos: Vector2i, rotInt: int, machineName: PlaceableBar.MachineTypes) -> void:
 	layers[activeLayerIndex].PlaceObject(obj, newPos, rotInt, machineName)
+	if(!placedFirstItemFlag):
+		print("testEthan")
+		placedFirstItemFlag = true
+		MusicManager.ChangeTrack(2)
 
 func ClickAction(newPos: Vector2i) -> void:
 	if(layers[activeLayerIndex].machineNodes.has(newPos)):
