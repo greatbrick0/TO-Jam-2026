@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://clh58gfv0fsu0"]
+[gd_scene load_steps=22 format=3 uid="uid://clh58gfv0fsu0"]
 
 [ext_resource type="ArrayMesh" uid="uid://b88so73osvjj1" path="res://Models/caldera.obj" id="1_7q1kq"]
 [ext_resource type="Script" uid="uid://2dcwffir1jdy" path="res://Scripts/title_screen.gd" id="1_lx1yx"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://b4bol2exbr80w" path="res://Models/Materials/rock.png" id="3_skxbn"]
 [ext_resource type="Texture2D" uid="uid://cye1wrk8uqe3f" path="res://Models/Materials/rockBase.png" id="4_skxbn"]
 [ext_resource type="PackedScene" uid="uid://dv7f04l0f743s" path="res://Scenes/LavaLake.tscn" id="6_1se2n"]
+[ext_resource type="Shader" path="res://Models/Materials/Shaderzx/LiquidLava.gdshader" id="9_1f6t1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_od2ib"]
 bg_color = Color(0.18359, 0.18359, 0.18359, 1)
@@ -35,6 +36,62 @@ albedo_texture = ExtResource("3_skxbn")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kqy0a"]
 albedo_texture = ExtResource("4_skxbn")
+
+[sub_resource type="Gradient" id="Gradient_5b31w"]
+offsets = PackedFloat32Array(0.0502513, 0.0678392, 0.173367, 0.193467, 0.281407, 0.291457, 0.462312, 0.469849, 0.713568, 0.731156)
+colors = PackedColorArray(0.158194, 0.0598328, 0.0389551, 1, 0.222913, 0.100969, 0.073797, 1, 0.223529, 0.101961, 0.0745098, 1, 0.638787, 0.238517, 0.115298, 1, 0.639216, 0.239216, 0.113725, 1, 0.824213, 0.502016, 0.202972, 1, 0.823529, 0.501961, 0.203922, 1, 0.84, 0.67578, 0.4116, 1, 0.886174, 0.769347, 0.581407, 1, 0.89521, 0.778569, 0.416341, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_028km"]
+gradient = SubResource("Gradient_5b31w")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c8him"]
+render_priority = 0
+shader = ExtResource("9_1f6t1")
+shader_parameter/waveStrength = 0.8
+shader_parameter/noiseScale = 1.0
+shader_parameter/tileSpeed = Vector2(0.4, 0.7)
+shader_parameter/noiseScaleMult = 3.0
+shader_parameter/tileSpeedMultiply = Vector2(0.6, 0.7)
+shader_parameter/gradient = SubResource("GradientTexture1D_028km")
+
+[sub_resource type="Animation" id="Animation_kqy0a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Control/Title:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SubViewportContainer/SubViewport/Camera3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(4.909, 4, 4.833)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/Control/Cover/ColorRect:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_lx1yx"]
 resource_name = "Start"
@@ -87,45 +144,6 @@ tracks/3/keys = {
 "args": [],
 "method": &"TransitionToGameplayScene"
 }]
-}
-
-[sub_resource type="Animation" id="Animation_kqy0a"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/Control/Title:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("SubViewportContainer/SubViewport/Camera3D:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(4.909, 4, 4.833)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("CanvasLayer/Control/Cover/ColorRect:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kqy0a"]
@@ -272,7 +290,10 @@ surface_material_override/1 = ExtResource("2_od2ib")
 surface_material_override/2 = SubResource("StandardMaterial3D_kqy0a")
 
 [node name="Node3D2" parent="." instance=ExtResource("6_1se2n")]
-transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0.03, 0)
+transform = Transform3D(7, 0, 0, 0, 0.3, 0, 0, 0, 7, -0.852857, 0.04, -1.74624)
+
+[node name="MeshInstance3D2" parent="Node3D2" index="0"]
+material_override = SubResource("ShaderMaterial_c8him")
 
 [node name="StartAnimator" type="AnimationPlayer" parent="."]
 libraries = {
@@ -281,3 +302,5 @@ libraries = {
 
 [connection signal="pressed" from="CanvasLayer/Control/Title/Play" to="." method="PlayStartAnimation"]
 [connection signal="pressed" from="CanvasLayer/Control/Title/Quit" to="." method="Quit"]
+
+[editable path="Node3D2"]
