@@ -7,8 +7,12 @@ static var rotations: Array[Vector4] = [Vector4(1, 0, 0, 1), Vector4(0, 1, -1, 0
 
 var machineNodes: Dictionary[Vector2i, Node3D] = {}
 var machineNames: Dictionary[Vector2i, PlaceableBar.MachineTypes] = {}
+@export var machineLimits: Dictionary[PlaceableBar.MachineTypes, int] = {}
+var machineCounts: Dictionary[PlaceableBar.MachineTypes, int] = {}
 
 func _ready() -> void:
+	for ii in machineLimits:
+		machineCounts[ii] = 0
 	for ii in get_children():
 		if(ii is TileAdder):
 			ii.Initialize()
@@ -21,6 +25,10 @@ func CanPlaceObject(newPos: Vector2i, rotInt: int, machineName: PlaceableBar.Mac
 	
 	if(machineNodes.has(newPos)):
 		return false
+	
+	if(machineLimits.has(machineName)):
+		if(machineCounts[machineName] + 1 > machineLimits[machineName]):
+			return false
 	
 	return true
 
@@ -35,6 +43,8 @@ func PlaceObject(obj: PackedScene, newPos: Vector2i, rotInt: int, machineName: P
 	else:
 		ref.layerRef = self
 		PlaceMachine(ref, newPos, rotInt)
+	if(machineCounts.has(machineName)):
+		machineCounts[machineName] += 1
 
 func PlaceConveyor(obj: Conveyor, rotInt: int) -> void:
 	obj.rotate(Vector3.UP, rotInt * PI/2)

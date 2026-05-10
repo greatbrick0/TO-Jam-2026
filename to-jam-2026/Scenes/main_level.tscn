@@ -34,6 +34,9 @@ bounds = Vector2i(6, 6)
 
 [node name="Layer1" parent="LayerManager" instance=ExtResource("1_5erdv")]
 dimensions = Vector2i(6, 6)
+machineLimits = Dictionary[int, int]({
+1: 2
+})
 
 [node name="TileAdder" type="Node3D" parent="LayerManager/Layer1"]
 script = ExtResource("6_f3gli")
