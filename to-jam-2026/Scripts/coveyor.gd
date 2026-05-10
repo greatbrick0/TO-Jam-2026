@@ -56,6 +56,7 @@ func DoesInputToMe(pos: Vector2i, myPos: Vector2i, layer: Layer) -> bool:
 
 func SlotOpened(acceptedItems: Array[ItemTypes.Items] = []) -> bool:
 	if(slotItemName == ItemTypes.Items.None):
+		PropagateOpen()
 		return false
 	if(acceptedItems.is_empty()):
 		MoveItem()
@@ -69,8 +70,11 @@ func SlotOpened(acceptedItems: Array[ItemTypes.Items] = []) -> bool:
 
 func MoveItem() -> void:
 	if(extrasNames.is_empty()):
-		inputFromTiles[inputTileIndex].SlotOpened()
-		inputTileIndex += 1
-		inputTileIndex %= len(inputFromTiles)
+		PropagateOpen()
 	else:
 		slotItemName = extrasNames.pop_front()
+
+func PropagateOpen() -> void:
+	inputFromTiles[inputTileIndex].SlotOpened()
+	inputTileIndex += 1
+	inputTileIndex %= len(inputFromTiles)

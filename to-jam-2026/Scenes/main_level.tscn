@@ -51,7 +51,7 @@ metadata/_custom_type_script = "uid://c45h36nk5jee3"
 [node name="CameraHolder" type="Node3D" parent="."]
 script = ExtResource("2_ikcpc")
 speedMagnitude = -3
-speedMult = Vector2(16.5, 23)
+speedMult = Vector2(1.375, 1.917)
 angle = -45.0
 
 [node name="Camera3D" type="Camera3D" parent="CameraHolder"]

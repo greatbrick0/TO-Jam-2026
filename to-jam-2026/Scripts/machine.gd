@@ -22,12 +22,24 @@ func _process(delta):
 		if(HasEnoughResources()):
 			StartProcess()
 			ConsumeResources()
+	if(!HasEnoughResources()):
+		for ii in inputDirections:
+			if(layerRef.machineNames.has(machinePos + ii)):
+				if(layerRef.machineNames[machinePos + ii] == PlaceableBar.MachineTypes.Belt):
+					layerRef.machineNodes[machinePos + ii].SlotOpened(GetRequiredResources())
 
 func HasEnoughResources() -> bool:
 	for ii in itemRequirements:
 		if(inputInventory.count(ii) < itemRequirements[ii]):
 			return false
 	return true
+
+func GetRequiredResources() -> Array[ItemTypes.Items]:
+	var requiredItems: Array[ItemTypes.Items] = []
+	for ii in itemRequirements:
+		if(inputInventory.count(ii) < itemRequirements[ii]):
+			requiredItems.append(ii)
+	return requiredItems
 
 func ConsumeResources() -> void:
 	for ii in itemRequirements:
@@ -43,3 +55,14 @@ func FinishProcess() -> void:
 	isProcessing = false
 	outputInventory.append(itemOutput)
 	print("finished!")
+
+func SlotOpened(acceptedItems: Array[ItemTypes.Items] = []) -> bool:
+	if(outputInventory.is_empty()):
+		return false
+	else:
+		MoveItem()
+		return true
+
+func MoveItem() -> void:
+	var ref: Node3D = ItemTypes.itemScenes[outputInventory.pop_front()].instantiate()
+	add_child(ref)
