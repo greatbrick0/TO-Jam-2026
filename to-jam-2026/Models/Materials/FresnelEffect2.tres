@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://c6ehptxpet4hr"]
+
+[ext_resource type="Shader" uid="uid://2heunextgh86" path="res://Models/Materials/Shaderzx/FresnelEffect.gdshader" id="1_h611d"]
+[ext_resource type="Texture2D" uid="uid://cd5sbhs0ej4jn" path="res://Models/Machines/GemDeposit4_Swatch1.png" id="2_kgasq"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_h611d")
+shader_parameter/texture_albedo = ExtResource("2_kgasq")
+shader_parameter/fresnelStrength = 2.17
+shader_parameter/fresnelColor = Vector4(-1.53, 6.325, 0.235, 1)
