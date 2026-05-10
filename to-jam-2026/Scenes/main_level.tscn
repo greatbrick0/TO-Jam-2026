@@ -62,8 +62,9 @@ script = ExtResource("1_q2fht")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ClickPlane"]
 shape = SubResource("WorldBoundaryShape3D_ikcpc")
 
-[node name="PlayerHud" parent="." node_paths=PackedStringArray("layerManager") instance=ExtResource("4_qbrl8")]
+[node name="PlayerHud" parent="." node_paths=PackedStringArray("layerManager", "ghostHolder") instance=ExtResource("4_qbrl8")]
 layerManager = NodePath("../LayerManager")
+ghostHolder = NodePath("../GhostHolder")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_a2ia3")
@@ -73,6 +74,8 @@ transform = Transform3D(0.653196, 0.473386, -0.590966, 0, 0.780474, 0.625188, 0.
 
 [node name="BorderVisual" parent="." instance=ExtResource("11_2jcip")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -0.5)
+
+[node name="GhostHolder" type="Node3D" parent="."]
 
 [connection signal="click_signal" from="ClickPlane" to="PlayerHud" method="_on_click_signal"]
 [connection signal="hover_signal" from="ClickPlane" to="PlayerHud" method="_on_hover_signal"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://dk2oqbtnnqpx2"]
 
-[ext_resource type="Shader" uid="uid://c8snk7ibsloeg" path="res://Models/Materials/Shaderzx/MaskedSprite.gdshader" id="1_y3tu3"]
+[ext_resource type="Shader" path="res://Models/Materials/Shaderzx/MaskedSprite.gdshader" id="1_y3tu3"]
 [ext_resource type="Texture2D" uid="uid://beldnl733smj7" path="res://Images/StraightArrow.png" id="2_lsdin"]
 [ext_resource type="PackedScene" uid="uid://di3gytn8l16kg" path="res://Models/Machines/Thermal Haul_ConveyorStraight.glb" id="3_rttb4"]
 [ext_resource type="Shader" uid="uid://2heunextgh86" path="res://Models/Materials/Shaderzx/FresnelEffect.gdshader" id="4_kqu0j"]

@@ -1,13 +1,13 @@
 [gd_resource type="Resource" script_class="PlaceableBar" load_steps=5 format=3 uid="uid://dxrpt2lw1nw7l"]
 
-[ext_resource type="PackedScene" uid="uid://bhw1ggv063vvf" path="res://Scenes/machine.tscn" id="1_2reb3"]
 [ext_resource type="Script" uid="uid://bniy585gb4ry8" path="res://Scripts/placeable_bar.gd" id="1_ck482"]
+[ext_resource type="PackedScene" uid="uid://dk2oqbtnnqpx2" path="res://Scenes/Ghosts/GhostConveyor.tscn" id="1_s8m4l"]
 [ext_resource type="PackedScene" uid="uid://r4fcro0nqyw2" path="res://Scenes/Machines/coveyor.tscn" id="2_s8m4l"]
 [ext_resource type="PackedScene" uid="uid://dmlvh0f22f6ni" path="res://Scenes/Machines/miner_machine.tscn" id="3_vjrqc"]
 
 [resource]
 script = ExtResource("1_ck482")
 placeables = Array[PackedScene]([ExtResource("2_s8m4l"), ExtResource("3_vjrqc")])
-ghosts = Array[PackedScene]([ExtResource("1_2reb3"), ExtResource("1_2reb3")])
+ghosts = Array[PackedScene]([ExtResource("1_s8m4l"), ExtResource("1_s8m4l")])
 names = Array[int]([0, 1])
 metadata/_custom_type_script = "uid://bniy585gb4ry8"
