@@ -55,7 +55,7 @@ func _on_click_signal(pos):
 			return
 		layerManager.PlaceObject(placeableList[0].placeables[placingIndex], pos, rotationIndex, placeableList[0].names[placingIndex])
 		MusicManager.PlayGeneral(1)
-		if(placingIndex != 0):
+		if(placeableList[0].names[placingIndex] != PlaceableBar.MachineTypes.Belt):
 			ResetIsPlacing()
 	print("click")
 

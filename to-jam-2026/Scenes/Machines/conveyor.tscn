@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://r4fcro0nqyw2"]
+
+[ext_resource type="Script" uid="uid://b768b4k174w5c" path="res://Scripts/coveyor.gd" id="1_oaw0s"]
+[ext_resource type="PackedScene" uid="uid://di3gytn8l16kg" path="res://Models/Machines/Thermal Haul_ConveyorStraight.glb" id="2_7xngv"]
+[ext_resource type="PackedScene" uid="uid://doffetnyn2mby" path="res://Models/Machines/Thermal Haul_ConveyorRight.glb" id="3_32ytb"]
+[ext_resource type="PackedScene" uid="uid://bikgxrtpkln2u" path="res://Models/Machines/Thermal Haul_ConveyorLeft.glb" id="4_1wyg4"]
+
+[node name="Conveyor" type="Node3D"]
+script = ExtResource("1_oaw0s")
+
+[node name="Visuals" type="Node3D" parent="."]
+
+[node name="Thermal Haul_ConveyorStraight" parent="Visuals" instance=ExtResource("2_7xngv")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="Thermal Haul_ConveyorRight" parent="Visuals" instance=ExtResource("3_32ytb")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+visible = false
+
+[node name="Thermal Haul_ConveyorLeft" parent="Visuals" instance=ExtResource("4_1wyg4")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+visible = false

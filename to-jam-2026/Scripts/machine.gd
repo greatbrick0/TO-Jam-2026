@@ -23,7 +23,10 @@ func _process(delta):
 
 func StartProcess() -> void:
 	isProcessing = true
+	$Timer.start()
 	print("processing...")
 
 func FinishProcess() -> void:
 	isProcessing = false
+	outputInventory.append(itemOutput)
+	print("finished!")

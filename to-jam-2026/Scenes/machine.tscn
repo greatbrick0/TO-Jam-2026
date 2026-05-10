@@ -11,3 +11,8 @@ script = ExtResource("1_xuuum")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Visuals"]
 mesh = SubResource("BoxMesh_7aq5r")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="FinishProcess"]

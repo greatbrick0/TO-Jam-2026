@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bniy585gb4ry8" path="res://Scripts/placeable_bar.gd" id="1_ck482"]
 [ext_resource type="PackedScene" uid="uid://dk2oqbtnnqpx2" path="res://Scenes/Ghosts/GhostConveyor.tscn" id="1_s8m4l"]
-[ext_resource type="PackedScene" uid="uid://r4fcro0nqyw2" path="res://Scenes/Machines/coveyor.tscn" id="2_s8m4l"]
+[ext_resource type="PackedScene" uid="uid://r4fcro0nqyw2" path="res://Scenes/Machines/conveyor.tscn" id="2_s8m4l"]
 [ext_resource type="PackedScene" uid="uid://dmlvh0f22f6ni" path="res://Scenes/Machines/miner_machine.tscn" id="3_vjrqc"]
 
 [resource]

@@ -3,8 +3,8 @@ extends Machine
 func InitMachine(newPos: Vector2i) -> void:
 	machinePos = newPos
 	
-	var lookingAtTile: Vector2i = machinePos + (-outputDirections[0])
-	print(lookingAtTile)
+	var lookingAtTile: Vector2i = machinePos + (outputDirections[0] * -1)
+	#print(str(machinePos) + " looking at " + str(lookingAtTile) + " using " + str(outputDirections[0]))
 	if(!layerRef.machineNames.has(lookingAtTile)):
 		return
 	

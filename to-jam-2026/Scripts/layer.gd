@@ -3,7 +3,7 @@ class_name Layer
 
 @export var dimensions: Vector2i = Vector2i(8, 8)
 
-var rotations: Array[Vector4] = [Vector4(1, 0, 1, 0), Vector4(0, -1, 0, 1), Vector4(-1, 0, -1, 0), Vector4(0, 1, 0, -1)]
+var rotations: Array[Vector4] = [Vector4(1, 0, 0, 1), Vector4(0, 1, -1, 0), Vector4(-1, 0, 0, -1), Vector4(0, -1, 1, 0)]
 
 var machineNodes: Dictionary[Vector2i, Node3D] = {}
 var machineNames: Dictionary[Vector2i, PlaceableBar.MachineTypes] = {}
@@ -43,10 +43,10 @@ func PlaceMachine(obj: Machine, newPos: Vector2i, rotInt: int) -> void:
 	obj.rotate(Vector3.UP, rotInt * PI/2)
 	for ii in range(len(obj.inputDirections)):
 		var dir: Vector2i = obj.inputDirections[ii]
-		obj.inputDirections[ii].x = (dir.x * rotations[rotInt].x) + (dir.x * rotations[rotInt].y) 
-		obj.inputDirections[ii].y = (dir.y * rotations[rotInt].z) + (dir.y * rotations[rotInt].w) 
+		obj.inputDirections[ii].x = (dir.x * rotations[rotInt].x) + (dir.y * rotations[rotInt].y) 
+		obj.inputDirections[ii].y = (dir.x * rotations[rotInt].z) + (dir.y * rotations[rotInt].w) 
 	for ii in range(len(obj.outputDirections)):
 		var dir: Vector2i = obj.outputDirections[ii]
-		obj.outputDirections[ii].x = (dir.x * rotations[rotInt].x) + (dir.x * rotations[rotInt].y) 
-		obj.outputDirections[ii].y = (dir.y * rotations[rotInt].z) + (dir.y * rotations[rotInt].w)
+		obj.outputDirections[ii].x = (dir.x * rotations[rotInt].x) + (dir.y * rotations[rotInt].y) 
+		obj.outputDirections[ii].y = (dir.x * rotations[rotInt].z) + (dir.y * rotations[rotInt].w)
 	obj.InitMachine(newPos)
