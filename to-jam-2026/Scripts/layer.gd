@@ -45,18 +45,29 @@ func PlaceObject(obj: PackedScene, newPos: Vector2i, rotInt: int, machineName: P
 		PlaceMachine(ref, newPos, rotInt)
 	if(machineCounts.has(machineName)):
 		machineCounts[machineName] += 1
+	UpdateCross(newPos)
+
+func UpdateCross(centre: Vector2i) -> void:
+	var tiles: Array[Vector2i] = [Vector2i.ZERO, Vector2i.DOWN, Vector2i.UP, Vector2i.LEFT, Vector2i.RIGHT]
+	for ii in tiles:
+		if(machineNames.has(centre + ii)):
+			if(machineNames[centre + ii] == PlaceableBar.MachineTypes.Belt):
+				machineNodes[centre + ii].UpdateConveyor(centre + ii, self)
 
 func PlaceConveyor(obj: Conveyor, rotInt: int) -> void:
 	obj.rotate(Vector3.UP, rotInt * PI/2)
+	obj.outputDirection = RotateVector2i(obj.outputDirection, rotInt)
 
 func PlaceMachine(obj: Machine, newPos: Vector2i, rotInt: int) -> void:
 	obj.rotate(Vector3.UP, rotInt * PI/2)
 	for ii in range(len(obj.inputDirections)):
-		var dir: Vector2i = obj.inputDirections[ii]
-		obj.inputDirections[ii].x = (dir.x * rotations[rotInt].x) + (dir.y * rotations[rotInt].y) 
-		obj.inputDirections[ii].y = (dir.x * rotations[rotInt].z) + (dir.y * rotations[rotInt].w) 
+		obj.inputDirections[ii] = RotateVector2i(obj.inputDirections[ii], rotInt)
 	for ii in range(len(obj.outputDirections)):
-		var dir: Vector2i = obj.outputDirections[ii]
-		obj.outputDirections[ii].x = (dir.x * rotations[rotInt].x) + (dir.y * rotations[rotInt].y) 
-		obj.outputDirections[ii].y = (dir.x * rotations[rotInt].z) + (dir.y * rotations[rotInt].w)
+		obj.outputDirections[ii] = RotateVector2i(obj.outputDirections[ii], rotInt)
 	obj.InitMachine(newPos)
+
+static func RotateVector2i(oldVec: Vector2i, amount: int) -> Vector2i:
+	var dir: Vector2i = oldVec
+	oldVec.x = (dir.x * rotations[amount].x) + (dir.y * rotations[amount].y) 
+	oldVec.y = (dir.x * rotations[amount].z) + (dir.y * rotations[amount].w) 
+	return oldVec
