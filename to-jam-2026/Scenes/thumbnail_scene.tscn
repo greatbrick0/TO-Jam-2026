@@ -1,0 +1,351 @@
+[gd_scene load_steps=25 format=3 uid="uid://kncarflliw0t"]
+
+[ext_resource type="Script" path="res://Scripts/title_screen.gd" id="1_xnter"]
+[ext_resource type="PackedScene" uid="uid://4c6p7308hx2l" path="res://Scenes/main_level.tscn" id="2_8icm8"]
+[ext_resource type="FontFile" uid="uid://dhyge03k5q3tt" path="res://Fonts/Quantico-Bold.ttf" id="3_appan"]
+[ext_resource type="ArrayMesh" uid="uid://b88so73osvjj1" path="res://Models/caldera.obj" id="4_nwh1v"]
+[ext_resource type="Texture2D" uid="uid://b4bol2exbr80w" path="res://Models/Materials/rock.png" id="5_jqhky"]
+[ext_resource type="Material" uid="uid://da7ahq1qgc7mx" path="res://Models/Materials/LiquidLavaMenu.tres" id="6_wl2y3"]
+[ext_resource type="Texture2D" uid="uid://cye1wrk8uqe3f" path="res://Models/Materials/rockBase.png" id="7_c0k8b"]
+[ext_resource type="PackedScene" uid="uid://dv7f04l0f743s" path="res://Scenes/LavaLake.tscn" id="8_n77p3"]
+[ext_resource type="Shader" uid="uid://baq7t2v47rsc8" path="res://Models/Materials/Shaderzx/LiquidLava.gdshader" id="9_81tny"]
+[ext_resource type="PackedScene" uid="uid://di3gytn8l16kg" path="res://Models/Machines/Thermal Haul_ConveyorStraight.glb" id="10_8icm8"]
+[ext_resource type="PackedScene" uid="uid://cni2kdyvodb21" path="res://Models/Machines/GemDeposit4.glb" id="11_nwh1v"]
+[ext_resource type="Material" uid="uid://cirpd8f3f2fi2" path="res://Models/Materials/FresnelEffect.tres" id="12_jqhky"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_od2ib"]
+bg_color = Color(0.18359, 0.18359, 0.18359, 1)
+border_width_right = 10
+border_color = Color(1, 0.305882, 0, 1)
+
+[sub_resource type="Theme" id="Theme_od2ib"]
+default_font = ExtResource("3_appan")
+Button/font_sizes/font_size = 56
+Button/styles/normal = SubResource("StyleBoxFlat_od2ib")
+
+[sub_resource type="LabelSettings" id="LabelSettings_1se2n"]
+font = ExtResource("3_appan")
+font_size = 70
+font_color = Color(1, 0.305882, 0, 1)
+
+[sub_resource type="Environment" id="Environment_od2ib"]
+ambient_light_source = 3
+ambient_light_color = Color(0.321728, 0.321728, 0.321728, 1)
+ambient_light_sky_contribution = 0.33
+ambient_light_energy = 2.95
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lx1yx"]
+albedo_texture = ExtResource("5_jqhky")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kqy0a"]
+albedo_texture = ExtResource("7_c0k8b")
+
+[sub_resource type="Gradient" id="Gradient_5b31w"]
+offsets = PackedFloat32Array(0.0502513, 0.0678392, 0.173367, 0.193467, 0.281407, 0.291457, 0.462312, 0.469849, 0.713568, 0.731156)
+colors = PackedColorArray(0.158194, 0.0598328, 0.0389551, 1, 0.222913, 0.100969, 0.073797, 1, 0.223529, 0.101961, 0.0745098, 1, 0.638787, 0.238517, 0.115298, 1, 0.639216, 0.239216, 0.113725, 1, 0.824213, 0.502016, 0.202972, 1, 0.823529, 0.501961, 0.203922, 1, 0.84, 0.67578, 0.4116, 1, 0.886174, 0.769347, 0.581407, 1, 0.89521, 0.778569, 0.416341, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_028km"]
+gradient = SubResource("Gradient_5b31w")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c8him"]
+render_priority = 0
+shader = ExtResource("9_81tny")
+shader_parameter/waveStrength = 0.8
+shader_parameter/noiseScale = 1.0
+shader_parameter/tileSpeed = Vector2(0.4, 0.7)
+shader_parameter/noiseScaleMult = 3.0
+shader_parameter/tileSpeedMultiply = Vector2(0.6, 0.7)
+shader_parameter/gradient = SubResource("GradientTexture1D_028km")
+
+[sub_resource type="Animation" id="Animation_kqy0a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Control/Title:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SubViewportContainer/SubViewport/Camera3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(4.909, 4, 4.833)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/Control/Cover/ColorRect:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_lx1yx"]
+resource_name = "Start"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Control/Title:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SubViewportContainer/SubViewport/Camera3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [Vector3(4.909, 4, 4.833), Vector3(1.784, 2.685, 2.678)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/Control/Cover/ColorRect:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.266667, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"TransitionToGameplayScene"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kqy0a"]
+_data = {
+&"RESET": SubResource("Animation_kqy0a"),
+&"Start": SubResource("Animation_lx1yx")
+}
+
+[node name="StartMenu" type="Node2D"]
+script = ExtResource("1_xnter")
+gameplayScene = ExtResource("2_8icm8")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(1280, 720)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(0.688355, -0.329313, 0.646313, 0, 0.891007, 0.45399, -0.725374, -0.312506, 0.613328, 4.909, 4, 4.833)
+current = true
+fov = 23.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Background" type="Control" parent="CanvasLayer/Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control/Background"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.246094, 0.177841, 0.177841, 1)
+
+[node name="Title" type="Control" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control/Title"]
+layout_mode = 0
+offset_left = 746.0
+offset_top = 144.0
+offset_right = 1196.0
+offset_bottom = 210.0
+color = Color(0.18, 0.18, 0.18, 0.588235)
+
+[node name="Play" type="Button" parent="CanvasLayer/Control/Title"]
+layout_mode = 0
+offset_left = 992.0
+offset_top = 246.0
+offset_right = 1172.0
+offset_bottom = 336.0
+theme = SubResource("Theme_od2ib")
+text = "Play"
+
+[node name="Quit" type="Button" parent="CanvasLayer/Control/Title"]
+layout_mode = 0
+offset_left = 992.0
+offset_top = 353.885
+offset_right = 1172.0
+offset_bottom = 443.885
+theme = SubResource("Theme_od2ib")
+text = "Quit
+"
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/Title"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 108.5
+offset_top = -234.0
+offset_right = 551.5
+offset_bottom = -133.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.304688, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "Thermal Haul"
+label_settings = SubResource("LabelSettings_1se2n")
+
+[node name="Cover" type="Control" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control/Cover"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Node3D"]
+environment = SubResource("Environment_od2ib")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Node3D"]
+transform = Transform3D(0.653421, 0.669623, -0.353052, 0, 0.466387, 0.884581, 0.756995, -0.578003, 0.304747, 0, 0, 0)
+
+[node name="Caldera" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45, 0, 0.89)
+mesh = ExtResource("4_nwh1v")
+surface_material_override/0 = SubResource("StandardMaterial3D_lx1yx")
+surface_material_override/1 = ExtResource("6_wl2y3")
+surface_material_override/2 = SubResource("StandardMaterial3D_kqy0a")
+
+[node name="Node3D2" parent="." instance=ExtResource("8_n77p3")]
+transform = Transform3D(7, 0, 0, 0, 0.3, 0, 0, 0, 7, -0.852857, 0.04, -1.74624)
+
+[node name="MeshInstance3D2" parent="Node3D2" index="0"]
+material_override = SubResource("ShaderMaterial_c8him")
+
+[node name="StartAnimator" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_kqy0a")
+}
+
+[node name="Thermal Haul_ConveyorStraight6" parent="." instance=ExtResource("10_8icm8")]
+transform = Transform3D(0.0524046, 0, -0.244446, 0, 0.25, 0, 0.244446, 0, 0.0524046, -0.0239553, 1.64513, 0.798261)
+
+[node name="Thermal Haul_ConveyorStraight" parent="." instance=ExtResource("10_8icm8")]
+transform = Transform3D(0.0522809, 0.140224, -0.20026, -3.60073e-09, 0.204788, 0.143394, 0.244472, -0.0299871, 0.042826, 0.405908, 1.4954, 0.705046)
+
+[node name="Thermal Haul_ConveyorStraight2" parent="." instance=ExtResource("10_8icm8")]
+transform = Transform3D(0.0522809, 0.140224, -0.20026, -3.60073e-09, 0.204788, 0.143394, 0.244472, -0.0299871, 0.042826, 0.802842, 1.21336, 0.620161)
+
+[node name="Thermal Haul_ConveyorStraight3" parent="." instance=ExtResource("10_8icm8")]
+transform = Transform3D(0.0522809, 0.140224, -0.20026, -3.60073e-09, 0.204788, 0.143394, 0.244472, -0.0299871, 0.042826, 1.2032, 0.929084, 0.534543)
+
+[node name="Thermal Haul_ConveyorStraight4" parent="." instance=ExtResource("10_8icm8")]
+transform = Transform3D(0.0522809, 0.140224, -0.20026, -3.60073e-09, 0.204788, 0.143394, 0.244472, -0.0299871, 0.042826, 1.60528, 0.645552, 0.447725)
+
+[node name="Thermal Haul_ConveyorStraight5" parent="." instance=ExtResource("10_8icm8")]
+transform = Transform3D(0.0522809, 0.140224, -0.20026, -3.60073e-09, 0.204788, 0.143394, 0.244472, -0.0299871, 0.042826, 2.00221, 0.363505, 0.36284)
+
+[node name="GemDeposit4" parent="." instance=ExtResource("11_nwh1v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.20649, 0, -10.9833)
+
+[node name="GemDeposit" parent="GemDeposit4" index="0"]
+transform = Transform3D(0.140251, 0.038895, 0.0362883, -0.0400858, 0.144545, 0, -0.0349685, -0.00969762, 0.145544, -5.02239, 1.6945, 11.7402)
+surface_material_override/1 = ExtResource("12_jqhky")
+
+[node name="GemDeposit5" parent="." instance=ExtResource("11_nwh1v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.20649, 0, -10.9833)
+
+[node name="GemDeposit" parent="GemDeposit5" index="0"]
+transform = Transform3D(-0.13748, 0.0484257, -0.0354162, 0.0523692, 0.140068, -0.0117689, 0.0292717, -0.0231513, -0.145283, -4.36549, 1.26805, 11.5828)
+surface_material_override/1 = ExtResource("12_jqhky")
+
+[node name="GemDeposit6" parent="." instance=ExtResource("11_nwh1v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.20649, 0, -10.9833)
+
+[node name="GemDeposit" parent="GemDeposit6" index="0"]
+transform = Transform3D(-0.0880075, 0.0281824, -0.118154, 0.034701, 0.14566, 0.00889596, 0.116407, -0.0221144, -0.0919806, -3.3876, 0.670113, 11.424)
+surface_material_override/1 = ExtResource("12_jqhky")
+
+[connection signal="pressed" from="CanvasLayer/Control/Title/Play" to="." method="PlayStartAnimation"]
+[connection signal="pressed" from="CanvasLayer/Control/Title/Quit" to="." method="Quit"]
+
+[editable path="Node3D2"]
+[editable path="GemDeposit4"]
+[editable path="GemDeposit5"]
+[editable path="GemDeposit6"]
